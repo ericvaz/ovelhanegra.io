@@ -500,10 +500,7 @@
       <div class="contact-in">
         <div>
           <h3>Let&rsquo;s build together.</h3>
-          <p class="mail">Universities, libraries &amp; schools → <a href="mailto:hello@ovelhanegra.io?subject=Institutional%20pilot%20inquiry">ask about an institutional pilot</a></p>
-          <p class="mail">Real estate &amp; brokerages → <a href="mailto:hello@ovelhanegra.io?subject=TerraSignal%20demo%20request">book a TerraSignal demo</a></p>
-          <p class="mail">Hotels, campuses &amp; tourism → <a href="mailto:hello@ovelhanegra.io?subject=VisitBee%20inquiry">talk VisitBee</a></p>
-          <p class="mail">Everything else → <a href="mailto:hello@ovelhanegra.io">hello@ovelhanegra.io</a></p>
+          <p class="mail">Partnerships, pilots, and questions about any of the four → <a href="mailto:hello@ovelhanegra.io">hello@ovelhanegra.io</a></p>
         </div>
         <a href="mailto:hello@ovelhanegra.io" class="cta">SAY HELLO <span class="arw">↗</span></a>
       </div>

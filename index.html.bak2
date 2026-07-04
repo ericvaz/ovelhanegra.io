@@ -401,19 +401,19 @@
         </button>
         <div class="car-viewport" tabindex="0" aria-label="Product screenshots, use arrow keys">
         <div class="car-track" id="carTrack">
-          <a class="car-slide" href="https://geo-data.io/?utm_source=ovelhanegra&utm_medium=referral&utm_campaign=portfolio" target="_blank" rel="noopener">
+          <a class="car-slide" href="https://geo-data.io" target="_blank" rel="noopener">
             <div class="car-shot"><img src="assets/work-geodata.jpg" alt="geo-data.io — spatial statistics in the browser" loading="lazy"></div>
             <div class="car-cap"><span class="car-name">geo-data.io</span><span class="car-go">Open ↗</span></div>
           </a>
-          <a class="car-slide" href="https://terraed.ca/?utm_source=ovelhanegra&utm_medium=referral&utm_campaign=portfolio" target="_blank" rel="noopener">
+          <a class="car-slide" href="https://terraed.ca" target="_blank" rel="noopener">
             <div class="car-shot"><img src="assets/work-terraed.jpg" alt="TerraEd — student neighbourhood intelligence" loading="lazy"></div>
             <div class="car-cap"><span class="car-name">TerraEd</span><span class="car-go">Open ↗</span></div>
           </a>
-          <a class="car-slide" href="https://visitbee.io/?utm_source=ovelhanegra&utm_medium=referral&utm_campaign=portfolio" target="_blank" rel="noopener">
+          <a class="car-slide" href="https://visitbee.io" target="_blank" rel="noopener">
             <div class="car-shot"><img src="assets/work-visitbee.jpg" alt="VisitBee — day-trip planner for hospitality" loading="lazy"></div>
             <div class="car-cap"><span class="car-name">VisitBee</span><span class="car-go">Open ↗</span></div>
           </a>
-          <a class="car-slide" href="https://terrasignal.ca/?utm_source=ovelhanegra&utm_medium=referral&utm_campaign=portfolio" target="_blank" rel="noopener">
+          <a class="car-slide" href="https://terrasignal.ca" target="_blank" rel="noopener">
             <div class="car-shot"><img src="assets/work-terrasignal.jpg" alt="TerraSignal — place intelligence for real estate" loading="lazy"></div>
             <div class="car-cap"><span class="car-name">TerraSignal</span><span class="car-go">Open ↗</span></div>
           </a>
@@ -500,10 +500,7 @@
       <div class="contact-in">
         <div>
           <h3>Let&rsquo;s build together.</h3>
-          <p class="mail">Universities, libraries &amp; schools → <a href="mailto:hello@ovelhanegra.io?subject=Institutional%20pilot%20inquiry">ask about an institutional pilot</a></p>
-          <p class="mail">Real estate &amp; brokerages → <a href="mailto:hello@ovelhanegra.io?subject=TerraSignal%20demo%20request">book a TerraSignal demo</a></p>
-          <p class="mail">Hotels, campuses &amp; tourism → <a href="mailto:hello@ovelhanegra.io?subject=VisitBee%20inquiry">talk VisitBee</a></p>
-          <p class="mail">Everything else → <a href="mailto:hello@ovelhanegra.io">hello@ovelhanegra.io</a></p>
+          <p class="mail">Partnerships, pilots, and questions about any of the four → <a href="mailto:hello@ovelhanegra.io">hello@ovelhanegra.io</a></p>
         </div>
         <a href="mailto:hello@ovelhanegra.io" class="cta">SAY HELLO <span class="arw">↗</span></a>
       </div>
