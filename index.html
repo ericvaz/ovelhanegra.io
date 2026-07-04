@@ -207,9 +207,7 @@
     filter:grayscale(1) contrast(.98);transition:filter .55s ease;
     -webkit-user-drag:none;user-select:none;
   }
-  /* focused slide is full colour; the rest stay greyscale. hover reveals too */
-  .car-slide.is-active .car-shot img,
-  .car-slide:hover .car-shot img{filter:grayscale(0) contrast(1)}
+  /* all slides stay greyscale; subtle lift on hover for tactility */
   .car-slide:hover .car-shot{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.10)}
   .car-cap{display:flex;align-items:center;justify-content:space-between;padding:14px 4px 0}
   .car-name{font-family:var(--sans);font-weight:600;font-size:17px;letter-spacing:-.01em}
