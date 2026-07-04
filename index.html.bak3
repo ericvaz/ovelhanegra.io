@@ -39,7 +39,6 @@
     --line:#d2d2d7;
     --box:#f5f5f7;
     --accent:#0071e3;
-    --wine:#b02a3a;
     --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter",system-ui,"Helvetica Neue",Arial,sans-serif;
     --mono:"SF Mono",ui-monospace,SFMono-Regular,"IBM Plex Mono",Menlo,monospace;
     --radius:18px;
@@ -110,9 +109,7 @@
   .tag-right .sq{width:7px;height:7px;border-radius:50%;background:var(--ink);margin-top:5px;flex:none}
 
   .hero-core{text-align:center;padding:40px 0 26px;position:relative;z-index:2}
-  .hero-core-a{padding:40px 0 14px}
-  .hero-core-b{padding:32px 0 26px}
-  .mark{width:24px;height:auto;margin:0 auto 20px;display:block}
+  .mark{width:48px;height:auto;margin:0 auto 22px;display:block}
   .wordmark{
     font-family:var(--sans);
     font-size:21px;letter-spacing:.01em;margin-bottom:22px;color:var(--grey);
@@ -154,27 +151,12 @@
   .email-line a{color:var(--accent)}
   .email-line a:hover{text-decoration:underline}
 
-  /* ---------- watercolour band ---------- */
-  .video-band{
-    position:relative;overflow:hidden;margin-top:6px;
-    height:clamp(300px,40vw,460px);
-    display:flex;align-items:center;justify-content:center;
-    background:#fff;
-  }
-  .video-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-  /* fade the watercolour into the white page, top & bottom — no darkening */
-  .video-band::after{
-    content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
-    background:linear-gradient(180deg,#fff 0%,rgba(255,255,255,0) 26%,rgba(255,255,255,0) 74%,#fff 100%);
-  }
-  .video-inner{position:relative;z-index:2;text-align:center;padding:0 28px;max-width:900px}
-  .video-thesis{
-    font-family:var(--sans);font-weight:600;color:#fff;
-    font-size:clamp(26px,4.6vw,50px);line-height:1.12;letter-spacing:-.02em;
-    text-shadow:0 0 5px rgba(12,28,32,.55),0 1px 3px rgba(12,28,32,.6),0 6px 34px rgba(12,28,32,.5);
-  }
-  .video-thesis em{font-style:normal;color:#fff}
-  @media(prefers-reduced-motion:reduce){ .video-bg{display:none} }
+  /* ---------- spatial field band ---------- */
+  .field-band{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:40px;background:var(--box)}
+  .field-band .wrap{padding-top:0;padding-bottom:0}
+  #field{display:block;width:100%;height:240px}
+  .fig{display:flex;justify-content:space-between;gap:16px;padding:12px 0 16px;flex-wrap:wrap}
+  .fig .label{max-width:none}
 
   /* ---------- section frame ---------- */
   section{padding:78px 0}
@@ -368,24 +350,10 @@
       <div class="tag-right label"><span class="sq"></span>Spatial cognition,<br>delivered through software</div>
     </div>
 
-    <div class="hero-core hero-core-a">
+    <div class="hero-core">
       <img class="mark" src="assets/ovelhanegra-sheep.png" alt="Ovelha Negra">
       <h1>The black sheep<br>of software.</h1>
-    </div>
-  </div>
-
-  <!-- watercolour band, directly under the headline -->
-  <div class="video-band">
-    <video class="video-bg" autoplay loop muted playsinline preload="auto" poster="assets/watercolor-poster.jpg" aria-hidden="true">
-      <source src="assets/watercolor.mp4" type="video/mp4">
-    </video>
-    <div class="video-inner">
-      <p class="video-thesis">Software that helps people <em>understand&nbsp;place</em>.</p>
-    </div>
-  </div>
-
-  <div class="wrap">
-    <div class="hero-core hero-core-b">
+      <p class="thesis">Software that helps people <em>understand place</em>.</p>
       <p class="sub">Ovelha Negra is an independent software house. We take spatial understanding — of a neighbourhood, a market, a campus, a dataset — that used to demand expertise or years of lived experience, and deliver it.</p>
 
       <div class="hero-boxes">
@@ -401,6 +369,17 @@
       </div>
 
       <p class="email-line">Write to us at <a href="mailto:hello@ovelhanegra.io">hello@ovelhanegra.io</a></p>
+    </div>
+  </div>
+
+  <!-- spatial field -->
+  <div class="field-band">
+    <div class="wrap">
+      <canvas id="field" aria-hidden="true"></canvas>
+      <div class="fig">
+        <span class="label">Fig. 1 — a spatially autocorrelated surface</span>
+        <span class="label">One point does not follow its neighbours ▪</span>
+      </div>
     </div>
   </div>
 </header>
@@ -521,10 +500,7 @@
       <div class="contact-in">
         <div>
           <h3>Let&rsquo;s build together.</h3>
-          <p class="mail">Universities, libraries &amp; schools → <a href="mailto:hello@ovelhanegra.io?subject=Institutional%20pilot%20inquiry">ask about an institutional pilot</a></p>
-          <p class="mail">Real estate &amp; brokerages → <a href="mailto:hello@ovelhanegra.io?subject=TerraSignal%20demo%20request">book a TerraSignal demo</a></p>
-          <p class="mail">Hotels, campuses &amp; tourism → <a href="mailto:hello@ovelhanegra.io?subject=VisitBee%20inquiry">talk VisitBee</a></p>
-          <p class="mail">Everything else → <a href="mailto:hello@ovelhanegra.io">hello@ovelhanegra.io</a></p>
+          <p class="mail">Partnerships, pilots, and questions about any of the four → <a href="mailto:hello@ovelhanegra.io">hello@ovelhanegra.io</a></p>
         </div>
         <a href="mailto:hello@ovelhanegra.io" class="cta">SAY HELLO <span class="arw">↗</span></a>
       </div>
