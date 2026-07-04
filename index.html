@@ -127,16 +127,13 @@
     margin:22px auto 0;max-width:26ch;line-height:1.22;letter-spacing:-.02em;
   }
   .thesis em{font-style:normal;color:var(--accent)}
-  /* outlined tagline: white fill, dark-grey stroke */
+  /* tagline: solid secondary grey, key phrase in ink */
   .thesis-outline{
-    font-family:var(--sans);font-weight:700;
-    font-size:clamp(26px,4.4vw,50px);line-height:1.12;letter-spacing:-.025em;
-    margin:20px auto 0;max-width:20ch;
-    color:#fff;
-    -webkit-text-stroke:1.4px #4c4c50;
-    text-stroke:1.4px #4c4c50;
-    paint-order:stroke fill;
+    font-family:var(--sans);font-weight:500;
+    font-size:clamp(22px,3.1vw,34px);line-height:1.2;letter-spacing:-.02em;
+    margin:18px auto 0;max-width:24ch;color:var(--grey);
   }
+  .thesis-outline em{font-style:normal;font-weight:600;color:var(--ink)}
   .sub{max-width:58ch;margin:22px auto 0;color:var(--grey);font-size:17px;line-height:1.5;letter-spacing:-.01em}
 
   .hero-boxes{display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap;margin-top:40px}
@@ -357,7 +354,7 @@
     <div class="hero-core">
       <img class="mark" src="assets/ovelhanegra-sheep.png" alt="Ovelha Negra">
       <h1>The black sheep<br>of software.</h1>
-      <p class="thesis-outline">Software that helps people understand&nbsp;place.</p>
+      <p class="thesis-outline">Software that helps people <em>understand&nbsp;place</em>.</p>
       <p class="sub">Ovelha Negra is an independent software house. We take spatial understanding — of a neighbourhood, a market, a campus, a dataset — that used to demand expertise or years of lived experience, and deliver it.</p>
 
       <div class="hero-boxes">
