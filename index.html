@@ -200,13 +200,17 @@
   .car-shot{
     border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--box);
     box-shadow:0 1px 2px rgba(0,0,0,.05);
+    transition:transform .45s cubic-bezier(.22,.61,.36,1),box-shadow .45s ease;
   }
   .car-shot img{
     display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top center;
-    filter:grayscale(1) contrast(.98);transition:filter .5s ease;
+    filter:grayscale(1) contrast(.98);transition:filter .55s ease;
     -webkit-user-drag:none;user-select:none;
   }
+  /* focused slide is full colour; the rest stay greyscale. hover reveals too */
+  .car-slide.is-active .car-shot img,
   .car-slide:hover .car-shot img{filter:grayscale(0) contrast(1)}
+  .car-slide:hover .car-shot{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.10)}
   .car-cap{display:flex;align-items:center;justify-content:space-between;padding:14px 4px 0}
   .car-name{font-family:var(--sans);font-weight:600;font-size:17px;letter-spacing:-.01em}
   .car-go{font-family:var(--mono);font-size:12px;color:var(--grey);transition:color .2s}
@@ -648,6 +652,7 @@
     var tx = Math.min(idx*m.step, m.max);
     track.style.transform = 'translateX(' + (-tx) + 'px)';
     dots.forEach(function(d,k){ d.classList.toggle('active', k===idx); });
+    slides.forEach(function(s,k){ s.classList.toggle('is-active', k===idx); });
     if(prev) prev.disabled = idx<=0;
     if(next) next.disabled = tx >= m.max-1;
   }
