@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>apniroots × Ovelha Negra — assistant demo</title>
+<meta name="description" content="Private preview: an AI shopping assistant for apniroots.com, built by Ovelha Negra.">
+<link rel="icon" href="/sheep.png">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="ar">
+  <div class="ar-ribbon">
+    Working demonstration prepared by <b>Ovelha Negra</b> for Apni Roots — representative
+    sample catalogue, not the live store. <a href="https://ovelhanegra.io">ovelhanegra.io</a>
+  </div>
+
+  <header class="ar-head">
+    <div class="ar-logo"><span class="ar-logo-a">a</span>apniroots</div>
+    <label class="ar-search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" placeholder="Search products..." autocomplete="off">
+    </label>
+    <button class="ar-bag" id="bagBtn">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+      Bag <span class="ar-bag-n" id="bagN">0</span>
+    </button>
+  </header>
+
+  <nav class="ar-nav"><div class="ar-nav-in" id="navBar"></div></nav>
+
+  <div class="ar-sale">
+    <h1>Summer <span>Sale</span></h1>
+    <p>Deals · July 11 – July 26, 2026 · Free delivery over $75</p>
+  </div>
+
+  <div class="ar-cats" id="cats"></div>
+
+  <main class="ar-wrap"><div class="ar-grid" id="grid"></div></main>
+
+  <footer class="ar-pitch">
+    <div class="ar-pitch-in">
+      <h2>This assistant can be live on apniroots.com in two weeks.</h2>
+      <p>
+        Everything on this page works: search the sample catalogue, fill the bag, and — the part
+        we built this demo for — press the black button in the corner and talk to the store.
+        Ask it for butter chicken in English, chole bhature in Punjabi, or your delivery day in
+        Hindi. It answers from the catalogue and store policies, and hands anything personal to
+        your WhatsApp line.
+      </p>
+      <p>
+        The offer: we install it on the real store free, you run it for a month free, and you
+        only subscribe if the numbers convince you.
+      </p>
+      <p class="ar-fine">
+        Built by <a href="https://ovelhanegra.io">Ovelha Negra</a> as an unlisted private preview
+        for Apni Roots (apniroots e-Commerce Canada inc.). No affiliation or endorsement implied;
+        product names and prices are a sample of the public storefront, July 2026.
+      </p>
+    </div>
+  </footer>
+
+  <div class="ar-fab" id="fab">
+    <span class="ar-fab-label">Ask me anything — हिंदी / ਪੰਜਾਬੀ welcome</span>
+    <button class="ar-fab-btn" id="fabBtn" aria-label="Open the apniroots assistant">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8 8 0 0 1-8 8H5l-2 2V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8Z"/><path d="M8 11h8M8 14h5"/></svg>
+    </button>
+  </div>
+
+  <div class="ar-chat" id="chat" role="dialog" aria-label="apniroots assistant" hidden>
+    <div class="ar-chat-head">
+      <span class="ar-logo-a">a</span>
+      <div class="ar-chat-title">
+        <b>apniroots assistant</b>
+        <span>English · हिंदी · ਪੰਜਾਬੀ — powered by Ovelha Negra</span>
+      </div>
+      <button class="ar-chat-x" id="chatX" aria-label="Close chat">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <div class="ar-msgs" id="msgs"></div>
+    <div class="ar-chat-in">
+      <input id="draft" placeholder="Ask for a dish, a product, delivery…" autocomplete="off">
+      <button class="ar-send" id="send" aria-label="Send" disabled>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 12 20 4l-4 8 4 8-16-8Z"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="ar-scrim" id="scrim" hidden></div>
+  <aside class="ar-cart" id="cart" aria-label="Shopping bag" hidden>
+    <div class="ar-cart-head">
+      <span>Your bag (<span id="bagN2">0</span>)</span>
+      <button class="ar-chat-x" id="cartX" style="color:#333" aria-label="Close bag">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <div class="ar-cart-items" id="cartItems"></div>
+    <div class="ar-cart-foot">
+      <div class="ar-free" id="freeLine"></div>
+      <div class="ar-bar"><div id="freeBar" style="width:0%"></div></div>
+      <div class="ar-total"><span>Total</span><span id="total">$0.00</span></div>
+      <button class="ar-checkout" id="checkout">Checkout</button>
+      <div class="ar-cart-note" id="cartNote">Same-day delivery: order by 12 noon, receive 5–9 pm.</div>
+    </div>
+  </aside>
+</div>
+
+<script src="data.js"></script>
+<script>
+(function () {
+  "use strict";
+  var API_URL = "https://geo-data.io/api/apniroots-chat";
+  var CATALOG = AR.CATALOG, BY_ID = AR.PRODUCT_BY_ID;
+
+  var TILE = {
+    "Atta & Flours": ["#f7e8c9", "#ecd49b"],
+    "Rice & Grains": ["#dce8f6", "#c3d7ee"],
+    "Dals & Pulses": ["#f8e3b8", "#f0c883"],
+    "Spices & Masalas": ["#f9d8c2", "#f2ad82"],
+    "Fresh & Dairy": ["#def0dc", "#bfe2c0"],
+    "Frozen": ["#d9eef7", "#b8dcee"],
+    "Snacks & Biscuits": ["#f7d9dd", "#efb8c1"],
+    "Pantry & Beverages": ["#e8ecd6", "#d2dcb2"]
+  };
+
+  var cart = {}, msgs = [], busy = false, cat = "All", query = "";
+  var $ = function (id) { return document.getElementById(id); };
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function money(n) { return "$" + n.toFixed(2); }
+  function tileBg(p) { var t = TILE[p.cat] || ["#eee", "#ddd"]; return "linear-gradient(140deg," + t[0] + "," + t[1] + ")"; }
+  function initials(p) { return p.name.split(" ").slice(0, 2).map(function (w) { return w[0]; }).join(""); }
+
+  // ---- grid ----
+  function renderGrid() {
+    var q = query.trim().toLowerCase();
+    var html = CATALOG.filter(function (p) {
+      if (cat === "Sale" && !p.sale) return false;
+      if (cat !== "All" && cat !== "Sale" && p.cat !== cat) return false;
+      if (!q) return true;
+      return (p.name + " " + p.cat + " " + (p.tags || "")).toLowerCase().indexOf(q) !== -1;
+    }).map(function (p) {
+      var parts = p.name.split(" ");
+      var n = cart[p.id] || 0;
+      return '<div class="ar-card">' +
+        '<div class="ar-tile" style="background:' + tileBg(p) + '">' +
+          '<span class="ar-size">' + esc(p.size) + '</span>' +
+          (p.sale ? '<span class="ar-flag">SALE</span>' : '') +
+          '<div class="ar-brand">' + esc(parts[0]) + '</div>' +
+          '<div class="ar-rest">' + esc(parts.slice(1).join(" ")) + '</div>' +
+          '<div class="ar-price">' + money(p.price) + '</div>' +
+        '</div>' +
+        '<div class="ar-card-body">' +
+          '<div class="ar-card-name">' + esc(p.name) + '</div>' +
+          '<button class="ar-add" data-add="' + p.id + '">' + (n ? "Add more (" + n + ")" : "Add to bag") + '</button>' +
+        '</div></div>';
+    }).join("");
+    $("grid").innerHTML = html || '<p style="color:#8a8578">Nothing matches — try the assistant in the corner.</p>';
+  }
+
+  // ---- cart ----
+  function count() { var s = 0, k; for (k in cart) s += cart[k]; return s; }
+  function total() { var s = 0, k; for (k in cart) s += (BY_ID[k] ? BY_ID[k].price : 0) * cart[k]; return s; }
+  function add(id, n) {
+    n = n === undefined ? 1 : n;
+    cart[id] = Math.max(0, (cart[id] || 0) + n);
+    if (!cart[id]) delete cart[id];
+    renderBag(); renderGrid(); renderMsgs();
+  }
+  function renderBag() {
+    var c = count(), t = total(), free = Math.max(0, 75 - t);
+    $("bagN").textContent = c; $("bagN2").textContent = c;
+    $("total").textContent = money(t);
+    $("freeLine").innerHTML = free > 0 ? 'Add <b>' + money(free) + '</b> more for free delivery' : '<b>You’ve unlocked free delivery</b>';
+    $("freeBar").style.width = Math.min(100, (t / 75) * 100) + "%";
+    var ids = Object.keys(cart);
+    $("cartItems").innerHTML = ids.length ? ids.map(function (id) {
+      var p = BY_ID[id]; if (!p) return "";
+      return '<div class="ar-ci">' +
+        '<div class="ar-cp-swatch" style="background:' + tileBg(p) + '">' + esc(initials(p)) + '</div>' +
+        '<div class="ar-ci-info"><b>' + esc(p.name) + '</b><span>' + esc(p.size) + '</span></div>' +
+        '<div class="ar-qty"><button data-dec="' + id + '" aria-label="Remove one">&minus;</button><span>' + cart[id] + '</span><button data-inc="' + id + '" aria-label="Add one">+</button></div>' +
+        '<div class="ar-ci-price">' + money(p.price * cart[id]) + '</div></div>';
+    }).join("") : '<div class="ar-cart-empty">Your bag is empty — ask the assistant for a dish and it will fill it for you.</div>';
+  }
+
+  // ---- chat ----
+  function productCard(p) {
+    var inBag = cart[p.id];
+    return '<div class="ar-cp">' +
+      '<div class="ar-cp-swatch" style="background:' + tileBg(p) + '">' + esc(initials(p)) + '</div>' +
+      '<div class="ar-cp-info"><b>' + esc(p.name) + '</b><span>' + esc(p.size) + '</span></div>' +
+      '<span class="ar-cp-price">' + money(p.price) + '</span>' +
+      '<button class="ar-cp-add' + (inBag ? " in" : "") + '" data-add="' + p.id + '">' + (inBag ? "In bag (" + inBag + ")" : "Add") + '</button></div>';
+  }
+  function renderMsgs() {
+    var html = msgs.map(function (m, i) {
+      if (m.role === "user") return '<div class="ar-msg u">' + esc(m.text) + '</div>';
+      var out = '<div class="ar-msg a">' + esc(m.text) + '</div>';
+      var prods = (m.productIds || []).map(function (id) { return BY_ID[id]; }).filter(Boolean);
+      if (prods.length) {
+        out += '<div class="ar-chat-prods">' + prods.map(productCard).join("");
+        if (prods.length >= 3) {
+          var sum = prods.reduce(function (s, p) { return s + p.price; }, 0);
+          out += '<button class="ar-addall" data-addall="' + prods.map(function (p) { return p.id; }).join(",") + '">Add all ' + prods.length + ' — ' + money(sum) + '</button>';
+        }
+        out += '</div>';
+      }
+      if (i === msgs.length - 1 && !busy && m.suggestions && m.suggestions.length) {
+        out += '<div class="ar-chips">' + m.suggestions.map(function (s) {
+          return '<button data-chip="' + esc(s) + '">' + esc(s) + '</button>';
+        }).join("") + '</div>';
+      }
+      return out;
+    }).join("");
+    if (busy) html += '<div class="ar-msg think">thinking…</div>';
+    var box = $("msgs");
+    box.innerHTML = html;
+    box.scrollTop = box.scrollHeight;
+  }
+  function push(m) { msgs.push(m); renderMsgs(); }
+
+  function ask(message) {
+    var history = msgs.slice(-8).map(function (m) { return { role: m.role, content: m.text }; });
+    return fetch(API_URL, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ message: message, history: history })
+    }).then(function (res) {
+      if (!res.ok) throw new Error("api " + res.status);
+      return res.json();
+    }).catch(function () {
+      return AR.localBrain(message); // offline / unconfigured → rule-based brain
+    });
+  }
+  function send(text) {
+    var message = (text !== undefined ? text : $("draft").value).trim();
+    if (!message || busy) return;
+    $("draft").value = ""; $("send").disabled = true;
+    push({ role: "user", text: message });
+    busy = true; renderMsgs();
+    ask(message).then(function (r) {
+      busy = false;
+      push({ role: "assistant", text: r.message, productIds: r.productIds, suggestions: r.suggestions });
+    });
+  }
+
+  // ---- nav + cats ----
+  var NAV = [
+    ["Shop", function () { cat = "All"; syncCats(); }],
+    ["Sweets & Snacks", function () { cat = "Snacks & Biscuits"; syncCats(); }],
+    ["Sale", function () { cat = "Sale"; syncCats(); }],
+    ["Contact us", function () { openChat(); }],
+    ["Delivery area", function () { openChat(); send("Do you deliver to my area?"); }]
+  ];
+  $("navBar").innerHTML = NAV.map(function (n, i) { return '<button data-nav="' + i + '">' + n[0] + '</button>'; }).join("");
+  var CATS = ["All", "Sale"].concat(AR.CATEGORIES);
+  function syncCats() {
+    $("cats").innerHTML = CATS.map(function (c) {
+      return '<button class="' + (cat === c ? "on" : "") + '" data-cat="' + esc(c) + '">' + esc(c) + '</button>';
+    }).join("");
+    renderGrid();
+  }
+
+  function openChat() { $("chat").hidden = false; $("fab").style.display = "none"; renderMsgs(); $("draft").focus(); }
+  function closeChat() { $("chat").hidden = true; $("fab").style.display = ""; }
+  function openCart() { $("cart").hidden = false; $("scrim").hidden = false; $("cartNote").textContent = "Same-day delivery: order by 12 noon, receive 5–9 pm."; }
+  function closeCart() { $("cart").hidden = true; $("scrim").hidden = true; }
+
+  // ---- events (delegated) ----
+  document.addEventListener("click", function (e) {
+    var el = e.target.closest ? e.target.closest("button") : null;
+    if (!el) return;
+    if (el.dataset.add) { add(el.dataset.add, 1); }
+    else if (el.dataset.inc) { add(el.dataset.inc, 1); }
+    else if (el.dataset.dec) { add(el.dataset.dec, -1); }
+    else if (el.dataset.addall) { el.dataset.addall.split(",").forEach(function (id) { add(id, 1); }); }
+    else if (el.dataset.chip) { send(el.dataset.chip); }
+    else if (el.dataset.cat) { cat = el.dataset.cat; syncCats(); }
+    else if (el.dataset.nav) { NAV[+el.dataset.nav][1](); }
+    else if (el.id === "fabBtn") openChat();
+    else if (el.id === "chatX") closeChat();
+    else if (el.id === "bagBtn") openCart();
+    else if (el.id === "cartX") closeCart();
+    else if (el.id === "checkout") $("cartNote").textContent = "Demo storefront — on the live site this hands off to your existing Shopify checkout.";
+    else if (el.id === "send") send();
+  });
+  $("scrim").addEventListener("click", closeCart);
+  $("q").addEventListener("input", function () { query = this.value; renderGrid(); });
+  $("draft").addEventListener("input", function () { $("send").disabled = busy || !this.value.trim(); });
+  $("draft").addEventListener("keydown", function (e) { if (e.key === "Enter") send(); });
+
+  // ---- boot ----
+  msgs.push({
+    role: "assistant",
+    text: "Hi! I'm the apniroots assistant. Ask me for a dish, a product, or anything about delivery — English, Hindi and Punjabi all work.",
+    suggestions: AR.DEFAULT_SUGGESTIONS
+  });
+  syncCats(); renderBag();
+})();
+</script>
+</body>
+</html>
