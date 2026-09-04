@@ -193,6 +193,25 @@
   .svc .go svg{width:16px;height:16px;transition:transform .15s}
   .svc:hover .go svg{transform:translate(3px,-3px)}
 
+  /* ---- pricing ---- */
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+  .price{border:1.5px solid var(--ink);padding:28px 24px;display:flex;flex-direction:column;min-height:420px;background:var(--paper)}
+  .price .p-name{font-family:var(--black);font-size:22px;text-transform:uppercase;margin-bottom:4px}
+  .price .p-for{font-weight:600;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--grey-txt);margin-bottom:22px}
+  .price .p-amount{font-family:var(--black);font-size:clamp(34px,3vw,48px);line-height:1;margin-bottom:2px}
+  .price .p-per{font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey-txt);margin-bottom:24px}
+  .price ul{list-style:none;margin-bottom:26px}
+  .price li{font-weight:600;font-size:12px;letter-spacing:.03em;text-transform:uppercase;color:#444;padding:7px 0;border-bottom:1px solid var(--line)}
+  .price .p-cta{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:10px;border:1.5px solid var(--ink);padding:14px;font-family:var(--black);font-size:13px;text-transform:uppercase;transition:background .15s,color .15s}
+  .price .p-cta:hover{background:var(--ink);color:#fff}
+  .price.featured{background:var(--blue);border-color:var(--blue);color:#fff}
+  .price.featured .p-for,.price.featured .p-per{color:#b9c6ff}
+  .price.featured li{color:#e8ecff;border-bottom-color:rgba(255,255,255,.25)}
+  .price.featured .p-cta{border-color:#fff;background:#fff;color:var(--blue)}
+  .price.featured .p-cta:hover{background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
+  .p-flag{align-self:flex-start;background:var(--yellow);color:var(--ink);font-family:var(--black);font-size:11px;text-transform:uppercase;padding:4px 9px;margin-bottom:16px}
+  .price-note{margin-top:18px;font-weight:600;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--grey-txt)}
+
   .work-note{font-weight:600;font-size:14px;color:#444;max-width:640px;margin-bottom:34px;line-height:1.6;text-transform:none;letter-spacing:0}
   .work-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
   .work{border:1.5px solid var(--ink);padding:18px;min-height:150px;display:flex;flex-direction:column;transition:background .15s,color .15s}
@@ -237,7 +256,7 @@
     .topbar .cell{border-right:0;margin-right:0;padding-right:14px}
     .pillars{grid-template-columns:repeat(2,1fr);gap:22px 0}
     .pillar:nth-child(2){border-right:0}
-    .svc-grid,.work-grid{grid-template-columns:1fr}
+    .svc-grid,.work-grid,.price-grid{grid-template-columns:1fr}
     .cta .section{grid-template-columns:1fr;padding:60px 22px}
     .section{padding:50px 22px}
     .row2,.row3,.row4{grid-template-columns:1fr}
@@ -451,10 +470,65 @@
   </div>
 </div>
 
+<!-- ==================== PRICING ==================== -->
+<div class="band" id="pricing">
+  <div class="section">
+    <div class="sec-label">02 — Pricing</div>
+    <h2 class="sec-title">Simple plans.<br>Serious results.</h2>
+    <div class="price-grid">
+      <div class="price">
+        <div class="p-name">Launch</div>
+        <div class="p-for">For businesses that need to exist online — properly</div>
+        <div class="p-amount">$1,950</div>
+        <div class="p-per">One-time · CAD</div>
+        <ul>
+          <li>Custom website, up to 5 pages</li>
+          <li>Brand-consistent design</li>
+          <li>Mobile-first &amp; fast</li>
+          <li>On-page SEO foundations</li>
+          <li>Analytics installed</li>
+          <li>Live in two weeks</li>
+        </ul>
+        <a class="p-cta" href="mailto:hello.ovelhanegra@gmail.com?subject=Launch%20package">Get Launch</a>
+      </div>
+      <div class="price featured">
+        <span class="p-flag">Most popular</span>
+        <div class="p-name">Grow</div>
+        <div class="p-for">For brands ready to rank, convert and compound</div>
+        <div class="p-amount">$950</div>
+        <div class="p-per">Per month · CAD</div>
+        <ul>
+          <li>SEO strategy &amp; content</li>
+          <li>Search &amp; social campaigns</li>
+          <li>Conversion optimization</li>
+          <li>Monthly reporting that makes sense</li>
+          <li>Direct line to us — no account managers</li>
+        </ul>
+        <a class="p-cta" href="mailto:hello.ovelhanegra@gmail.com?subject=Grow%20plan">Start Growing</a>
+      </div>
+      <div class="price">
+        <div class="p-name">Scale</div>
+        <div class="p-for">For teams that want data, AI and custom tooling</div>
+        <div class="p-amount">Custom</div>
+        <div class="p-per">Scoped per project</div>
+        <ul>
+          <li>Dashboards &amp; analytics</li>
+          <li>Geospatial market intelligence</li>
+          <li>AI agents &amp; automation</li>
+          <li>Custom software &amp; integrations</li>
+          <li>Growth strategy</li>
+        </ul>
+        <a class="p-cta" href="mailto:hello.ovelhanegra@gmail.com?subject=Scale%20project">Talk to Us</a>
+      </div>
+    </div>
+    <p class="price-note">Prices in CAD · No lock-in contracts · Grow cancellable any month</p>
+  </div>
+</div>
+
 <!-- ==================== WORK ==================== -->
 <div class="band" id="work">
   <div class="section">
-    <div class="sec-label">02 — Portfolio</div>
+    <div class="sec-label">03 — Portfolio</div>
     <h2 class="sec-title">Portfolio.</h2>
     <p class="work-note">We don't just advise — we ship. Ovelha Negra designs, builds, ranks and grows its own products. The same strategy, craft and data discipline goes into every client engagement.</p>
     <div class="work-grid">
