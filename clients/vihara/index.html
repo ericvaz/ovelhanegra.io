@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Windsor Buddhist Vihara × Ovelha Negra — A Gift of a Website</title>
+<link rel="icon" type="image/png" href="/assets/ovelhanegra-sheep.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Archivo+Black&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ffffff; --ink:#0e0e0e; --blue:#1b44e4; --coral:#f05b4a; --yellow:#f2a912;
+    --line:#d8d8d4; --grey-txt:#7a7a7a;
+    --wb-maroon:#5e2a1e; --wb-gold:#b96f1f; --wb-cream:#faf6ef;
+    --sans:"Archivo",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    --black:"Archivo Black","Archivo",sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+
+  .top{display:flex;align-items:center;justify-content:space-between;padding:18px 30px;border-bottom:1.5px solid var(--ink);position:sticky;top:0;background:var(--paper);z-index:50}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand img{height:28px}
+  .brand b{font-family:var(--black);font-size:13px;text-transform:uppercase}
+  .top .tag{font-weight:800;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--grey-txt)}
+
+  .wrap{max-width:1100px;margin:0 auto;padding:0 30px}
+  .hero{padding:64px 0 40px;border-bottom:1.5px solid var(--ink)}
+  .hero .pre{font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--wb-gold);margin-bottom:16px}
+  h1{font-family:var(--black);font-size:clamp(30px,5.4vw,62px);line-height:.96;text-transform:uppercase;letter-spacing:-.01em}
+  h1 .x{color:var(--wb-gold)}
+  .hero p{font-weight:600;font-size:17px;max-width:680px;margin-top:22px;color:#333}
+
+  .sec{padding:56px 0;border-bottom:1.5px solid var(--ink)}
+  .sec-label{font-weight:800;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-txt);margin-bottom:12px}
+  h2{font-family:var(--black);font-size:clamp(26px,3.6vw,44px);line-height:.95;text-transform:uppercase;margin-bottom:26px}
+  .lead{font-weight:600;font-size:16px;max-width:700px;color:#333;margin-bottom:30px;line-height:1.6}
+
+  .built{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+  .bi{border:1.5px solid var(--ink);padding:18px;display:flex;gap:12px;align-items:flex-start}
+  .bi .ck{width:26px;height:26px;flex:none;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
+  .bi b{display:block;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.03em;margin-bottom:4px}
+  .bi span{font-weight:600;font-size:12.5px;color:#555;line-height:1.45}
+  .built-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:6px}
+  .bs{background:var(--wb-maroon);color:var(--wb-cream);padding:20px;text-align:center}
+  .bs b{font-family:var(--black);font-size:30px;display:block;color:var(--wb-gold)}
+  .bs span{font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+
+  .frames{display:grid;grid-template-columns:68fr 32fr;gap:20px;align-items:start}
+  .frame-desktop{border:2px solid var(--ink)}
+  .frame-bar{display:flex;gap:6px;padding:10px 12px;border-bottom:2px solid var(--ink)}
+  .frame-bar i{width:8px;height:8px;border-radius:50%;background:var(--ink);display:block}
+  .frame-desktop iframe{width:100%;height:460px;border:0;display:block}
+  .frame-phone{border:2px solid var(--ink);border-radius:26px;overflow:hidden;max-width:270px;margin:0 auto}
+  .frame-phone .notch{height:20px;border-bottom:2px solid var(--ink);display:flex;align-items:center;justify-content:center}
+  .frame-phone .notch i{width:60px;height:6px;border-radius:4px;background:var(--ink)}
+  .frame-phone iframe{width:270px;height:520px;border:0;display:block}
+  .visit{display:inline-flex;align-items:center;gap:10px;margin-top:22px;background:var(--wb-gold);color:#fff;font-family:var(--black);font-size:14px;text-transform:uppercase;padding:15px 24px}
+  .visit:hover{background:var(--ink)}
+  .inv-note{font-weight:600;font-size:12.5px;color:var(--grey-txt);margin-top:14px;max-width:720px;line-height:1.6}
+
+  .invoice{border:1.5px solid var(--ink);max-width:720px}
+  .inv-row{display:flex;justify-content:space-between;gap:16px;padding:15px 20px;border-bottom:1px solid var(--line);font-weight:600;font-size:14px}
+  .inv-row span:last-child{font-weight:800;white-space:nowrap}
+  .inv-row small{display:block;color:var(--grey-txt);font-size:12px;font-weight:600}
+  .inv-sub{background:#f6f6f4}
+  .inv-disc{background:var(--yellow);font-weight:800}
+  .inv-total{background:var(--ink);color:#fff;border-bottom:0}
+  .inv-total span{font-family:var(--black);font-size:18px}
+
+  .next-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+  .nx{border:1.5px solid var(--ink);padding:20px;display:flex;flex-direction:column;transition:background .15s,color .15s}
+  .nx:hover{background:var(--ink);color:#fff}
+  .nx:hover .np{color:var(--yellow)}
+  .nx:hover span{color:#cfcfcf}
+  .nx .num{font-family:var(--black);font-size:13px;color:var(--wb-gold);margin-bottom:8px}
+  .nx b{font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:.03em;margin-bottom:6px;line-height:1.3}
+  .nx span{font-weight:600;font-size:12.5px;color:#555;line-height:1.5;margin-bottom:14px}
+  .nx .np{margin-top:auto;font-family:var(--black);font-size:15px}
+
+  .cta{background:var(--wb-maroon);color:#fff}
+  .cta .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;padding-top:56px;padding-bottom:56px}
+  .cta h2{margin-bottom:8px}
+  .cta h2 .hl{color:var(--wb-gold)}
+  .cta p{font-weight:600;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:#d9b98f}
+  .cta a{background:var(--wb-gold);color:#fff;font-family:var(--black);font-size:16px;text-transform:uppercase;padding:20px 28px}
+  .cta a:hover{background:var(--ink)}
+
+  footer{padding:20px 30px;font-weight:600;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--grey-txt);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  @media(max-width:900px){
+    .built{grid-template-columns:repeat(2,1fr)}
+    .frames{grid-template-columns:1fr}
+    .next-grid{grid-template-columns:repeat(2,1fr)}
+    .built-stats{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:600px){
+    .wrap{padding:0 20px}
+    .built,.next-grid{grid-template-columns:1fr}
+    .frame-desktop iframe{height:340px}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <a class="brand" href="/"><img src="/assets/ovelhanegra-sheep.png" alt="Ovelha Negra"><b>Ovelha Negra</b></a>
+  <span class="tag">Client Folio · Community Offer · Confidential</span>
+</div>
+
+<div class="wrap hero">
+  <div class="pre">Prepared for the Windsor Buddhist Vihara · September 2026</div>
+  <h1>Windsor Buddhist Vihara <span class="x">×</span> Ovelha Negra</h1>
+  <p>Our founder has a personal connection to the Vihara's mission in Windsor, and we wanted to offer something of real use: a modern, welcoming website — <b>already designed and built</b> — at a fraction of its normal cost. This page shows what it looks like, what it includes, and our community offer.</p>
+</div>
+
+<div class="wrap sec">
+  <div class="sec-label">01 — Why A New Website</div>
+  <h2>An open door<br>deserves an open web.</h2>
+  <p class="lead">Someone searching "meditation Windsor" tonight will decide in seconds whether to visit. A calm, mobile-friendly site that answers their questions — when, where, what to expect, am I welcome? — is the difference between a curious visitor and an empty cushion. The new site puts your real programs, your address, and your welcome front and centre, beautifully.</p>
+</div>
+
+<div class="wrap sec">
+  <div class="sec-label">02 — What Has Been Built</div>
+  <h2>Already designed.<br>Already running.</h2>
+  <div class="built">
+    <div class="bi"><span class="ck">✓</span><div><b>Custom design</b><span>Warm cream, ochre and maroon; serif elegance; the bodhi leaf as your mark.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Mobile-first build</b><span>Beautiful on phones — where people search for "meditation near me".</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Your real programs</b><span>English meditation, Sinhala pooja, Sutta study, full-moon program, Dhamma school — imported and organized.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Upcoming event card</b><span>The next session is always front and centre with date, time and welcome note.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>New to Buddhism? path</b><span>A gentle entry point for first-time visitors, exactly where they need it.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Visit information</b><span>691 Campbell Ave, phone, email and one-tap directions.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Support section</b><span>E-transfer donation instructions and your registered charity number, with tax-receipt note.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Annual festivals</b><span>Vesak, Rains Retreat, Katina and New Year blessings, all present.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Fast, secure hosting</b><span>Modern global hosting with HTTPS — the preview is live on it right now.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>SEO foundations</b><span>So "Buddhist temple Windsor" and "meditation Windsor" can find you.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Facebook linked</b><span>Your existing community page, connected.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Launch on your domain</b><span>Goes live at windsorbuddhistvihara.org the day you say yes.</span></div></div>
+  </div>
+  <div class="built-stats">
+    <div class="bs"><b>100%</b><span>Mobile-ready</span></div>
+    <div class="bs"><b>6</b><span>Weekly &amp; monthly programs</span></div>
+    <div class="bs"><b>4</b><span>Annual festivals</span></div>
+    <div class="bs"><b>∞</b><span>All are welcome</span></div>
+  </div>
+</div>
+
+<div class="wrap sec">
+  <div class="sec-label">03 — See It Live</div>
+  <h2>The new Vihara site,<br>running right now.</h2>
+  <div class="frames">
+    <div class="frame-desktop">
+      <div class="frame-bar"><i></i><i></i><i></i></div>
+      <iframe src="https://windsor-vihara.vercel.app" title="Windsor Buddhist Vihara — desktop preview" loading="lazy"></iframe>
+    </div>
+    <div class="frame-phone">
+      <div class="notch"><i></i></div>
+      <iframe src="https://windsor-vihara.vercel.app" title="Windsor Buddhist Vihara — mobile preview" loading="lazy"></iframe>
+    </div>
+  </div>
+  <a class="visit" href="https://windsor-vihara.vercel.app" target="_blank" rel="noopener">Open the full preview ↗</a>
+  <p class="inv-note">The imagery is concept photography to show the direction — we would love to photograph the actual shrine room, your monks and your community, so the site shows the real Vihara.</p>
+</div>
+
+<div class="wrap sec">
+  <div class="sec-label">04 — The Community Offer</div>
+  <h2>Our practice of dana:<br>80% off.</h2>
+  <div class="invoice">
+    <div class="inv-row"><span>Complete design &amp; build<small>Custom design, all sections, mobile-first, launch-ready</small></span><span>$2,450</span></div>
+    <div class="inv-row"><span>Content &amp; program import<small>All schedules, festivals, visit and support information</small></span><span>$400</span></div>
+    <div class="inv-row"><span>SEO foundations &amp; local schema<small>So seekers in Windsor can find you</small></span><span>$350</span></div>
+    <div class="inv-row inv-sub"><span>Subtotal</span><span>$3,200</span></div>
+    <div class="inv-row inv-disc"><span>Community offer — 80%<small style="color:#6b5200">Given our founder's personal connection to the Vihara's mission</small></span><span>−$2,560</span></div>
+    <div class="inv-row inv-total"><span>Total</span><span>$640 CAD</span></div>
+  </div>
+  <p class="inv-note">One-time — the website has no monthly fee from us, ever. Questions about anything here? Reply to our email or call and we'll walk through it together, at your pace.</p>
+</div>
+
+<div class="wrap sec">
+  <div class="sec-label">05 — If You'd Like To Go Further</div>
+  <h2>Gentle next steps.</h2>
+  <p class="lead">None of this is required — the site stands complete on its own. But if the community wishes, these are the things that would help more people find their way to the cushion.</p>
+  <div class="next-grid">
+    <div class="nx"><div class="num">01</div><b>Launch on your domain</b><span>windsorbuddhistvihara.org points at the new site; email stays exactly as it is.</span><div class="np">$150</div></div>
+    <div class="nx"><div class="num">02</div><b>Photography of the real Vihara</b><span>The shrine room, the monks, a Tuesday sitting — replacing concept imagery with your true home.</span><div class="np">from $450</div></div>
+    <div class="nx"><div class="num">03</div><b>Google presence</b><span>An accurate, verified Google listing with hours, photos and directions — how most visitors will find you.</span><div class="np">$250</div></div>
+    <div class="nx"><div class="num">04</div><b>Events calendar &amp; newsletter</b><span>A living calendar the community can follow, and a simple email list for announcements.</span><div class="np">from $400</div></div>
+    <div class="nx"><div class="num">05</div><b>Online donations page</b><span>A clear, trustworthy giving page — e-transfer, CanadaHelps or card — with automatic tax receipts.</span><div class="np">from $500</div></div>
+    <div class="nx"><div class="num">06</div><b>Ongoing care</b><span>We keep the site updated with your events and photos — a quiet hand in the background.</span><div class="np">$95/mo</div></div>
+  </div>
+</div>
+
+<div class="cta">
+  <div class="wrap">
+    <div>
+      <h2>May this be<br><span class="hl">of benefit.</span></h2>
+      <p>Reply anytime — there is no deadline and no pressure.</p>
+    </div>
+    <a href="mailto:hello.ovelhanegra@gmail.com?subject=Windsor%20Buddhist%20Vihara%20website">hello.ovelhanegra@gmail.com</a>
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 Ovelha Negra · Prepared with respect for the Windsor Buddhist Vihara</span>
+  <a href="/clients/">← Client portal</a>
+</footer>
+
+</body>
+</html>
