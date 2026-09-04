@@ -197,7 +197,14 @@
 
   /* ---- pricing ---- */
   .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
-  .price{border:1.5px solid var(--ink);padding:28px 24px;display:flex;flex-direction:column;min-height:420px;background:var(--paper)}
+  .price{border:1.5px solid var(--ink);padding:28px 24px;display:flex;flex-direction:column;min-height:420px;background:var(--paper);transition:background .2s,border-color .2s,color .2s,transform .15s}
+  .price:nth-child(1){--hc:var(--blue);--hc-sub:#b9c6ff;--hc-li:#e8ecff;--hc-bd:rgba(255,255,255,.28)}
+  .price:nth-child(2){--hc:var(--ink);--hc-sub:#9a9a9a;--hc-li:#d6d6d6;--hc-bd:rgba(255,255,255,.22)}
+  .price:nth-child(3){--hc:var(--coral);--hc-sub:#ffe0db;--hc-li:#fff0ed;--hc-bd:rgba(255,255,255,.35)}
+  .price:hover{background:var(--hc);border-color:var(--hc);color:#fff;transform:translateY(-4px)}
+  .price:hover .p-for,.price:hover .p-per{color:var(--hc-sub)}
+  .price:hover li{color:var(--hc-li);border-bottom-color:var(--hc-bd)}
+  .price:hover .p-cta{background:#fff;border-color:#fff;color:var(--hc)}
   .price .p-name{font-family:var(--black);font-size:22px;text-transform:uppercase;margin-bottom:4px}
   .price .p-for{font-weight:600;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--grey-txt);margin-bottom:22px}
   .price .p-amount{font-family:var(--black);font-size:clamp(34px,3vw,48px);line-height:1;margin-bottom:2px}
@@ -210,6 +217,10 @@
   .price.featured .p-for,.price.featured .p-per{color:#b9c6ff}
   .price.featured li{color:#e8ecff;border-bottom-color:rgba(255,255,255,.25)}
   .price.featured .p-cta{border-color:#fff;background:#fff;color:var(--blue)}
+  .price.featured:hover{background:var(--hc);border-color:var(--hc)}
+  .price.featured:hover .p-for,.price.featured:hover .p-per{color:var(--hc-sub)}
+  .price.featured:hover li{color:var(--hc-li);border-bottom-color:var(--hc-bd)}
+  .price.featured:hover .p-cta{background:#fff;border-color:#fff;color:var(--hc)}
   .price.featured .p-cta:hover{background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
   .p-flag{align-self:flex-start;background:var(--yellow);color:var(--ink);font-family:var(--black);font-size:11px;text-transform:uppercase;padding:4px 9px;margin-bottom:16px}
   .price-note{margin-top:18px;font-weight:600;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--grey-txt)}
