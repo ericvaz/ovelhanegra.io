@@ -272,13 +272,91 @@
     .svc-grid,.work-grid,.price-grid{grid-template-columns:1fr}
     .cta .section{grid-template-columns:1fr;padding:60px 22px}
     .section{padding:50px 22px}
-    .row2,.row3,.row4{grid-template-columns:1fr}
+    .row3,.row4{grid-template-columns:1fr}
     .pac-tile{grid-template-columns:1fr 1fr;min-height:120px}
     .bottomstrip{gap:16px}
+  }
+  /* ============ MOBILE LAYER ============ */
+  .m-only{display:none}
+  @media(max-width:720px){
+    .m-only{display:block}
+    .topbar,.col-mid,.row-chart,.row3,.row4,.pillars,.bottomstrip{display:none}
+
+    .m-header{display:flex;align-items:center;justify-content:space-between;padding:14px 22px;border-bottom:1.5px solid var(--ink);position:sticky;top:0;background:var(--paper);z-index:60}
+    .m-header .mh-brand{display:flex;align-items:center;gap:10px}
+    .m-header img{height:34px;width:auto}
+    .m-header b{font-family:var(--black);font-size:19px;letter-spacing:0;text-transform:uppercase}
+    .m-burger{background:none;border:0;padding:6px 0 6px 12px;cursor:pointer;display:flex;flex-direction:column;gap:5px}
+    .m-burger i{width:30px;height:4px;background:var(--ink);display:block}
+    .m-menu{display:none;border-bottom:1.5px solid var(--ink);background:var(--paper);position:sticky;top:63px;z-index:59}
+    .m-menu.open{display:block}
+    .m-menu a{display:block;padding:15px 22px;font-family:var(--black);font-size:14px;text-transform:uppercase;letter-spacing:.04em;border-bottom:1px solid var(--line)}
+    .m-menu a:last-child{border-bottom:0}
+    .m-menu a:active{background:var(--blue);color:#fff}
+
+    .col-left{position:relative;padding:18px 22px 8px}
+    .m-meta{display:flex;align-items:center;gap:10px;font-weight:700;font-size:14px;margin-bottom:18px}
+    .m-meta .maple2{width:22px;height:22px;flex:none}
+    .m-meta .div{width:1px;height:20px;background:var(--line);margin:0 8px}
+    .m-sheep{position:absolute;top:38px;right:2px;width:35%;aspect-ratio:1/1.05;display:flex;align-items:center;justify-content:center;z-index:1}
+    .m-sheep .halftone{display:block}
+    .m-sheep img{position:relative;width:56%;height:auto;z-index:2}
+
+    h1{font-size:clamp(40px,13.5vw,56px);max-width:64%;margin-bottom:18px;position:relative;z-index:2}
+    .tagline{font-size:clamp(19px,5.9vw,25px);white-space:normal;margin-bottom:16px;position:relative;z-index:2}
+    .m-ddr{font-weight:800;font-size:21px;letter-spacing:-.01em;display:inline-block;border-bottom:4px solid var(--blue);padding-bottom:6px;margin-bottom:16px}
+    .thesis{border-left:0;padding-left:0;text-transform:none;font-weight:600;font-size:17px;letter-spacing:0;line-height:1.5;color:#1c1c1c;margin-bottom:22px}
+    .m-cta{display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--blue);color:#fff;font-weight:700;font-size:17px;padding:17px 22px;margin-bottom:10px}
+    .m-cta svg{width:26px;height:16px;flex:none}
+
+    .col-right{padding:0 22px}
+    .row2{grid-template-columns:47fr 53fr;gap:6px}
+
+    .m-sec{padding:26px 22px 6px}
+    .m-label{color:var(--blue);font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+    .m-rows{display:flex;flex-direction:column;gap:12px}
+    .m-row{display:flex;align-items:center;gap:16px;border:1px solid var(--line);background:var(--paper);padding:14px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+    .m-row .ic{width:64px;height:64px;flex:none;display:flex;align-items:center;justify-content:center;border-radius:8px}
+    .m-row .ic svg{width:30px;height:30px}
+    .m-row:nth-child(1) .ic{background:var(--blue)}
+    .m-row:nth-child(2) .ic{background:var(--coral)}
+    .m-row:nth-child(3) .ic{background:var(--yellow)}
+    .m-row .tx{flex:1;min-width:0}
+    .m-row .tx b{display:block;font-weight:800;font-size:14px;letter-spacing:.02em;text-transform:uppercase;line-height:1.25;margin-bottom:4px}
+    .m-row .tx span{font-weight:600;font-size:12.5px;color:#555;line-height:1.4;display:block}
+    .m-row .arw{flex:none;width:26px;height:16px}
+
+    .m-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .m-stat{background:#f4f4f2;padding:14px 12px 10px;min-width:0}
+    .m-stat b{font-family:var(--black);font-size:clamp(19px,5.6vw,24px);display:block;margin-bottom:3px}
+    .m-stat span{font-weight:600;font-size:11px;color:#555;line-height:1.35;display:block;margin-bottom:8px}
+    .m-stat svg{width:100%;height:34px;display:block}
+
+    .m-band{background:var(--blue);color:#fff;margin-top:26px;padding:26px 22px;display:flex;align-items:center;gap:18px}
+    .m-band .big-arw{width:44px;height:44px;flex:none}
+    .m-band small{display:block;font-weight:600;font-size:13px;color:#c7d1ff;margin-bottom:4px}
+    .m-band a{font-family:var(--black);font-size:clamp(19px,5.8vw,24px);text-transform:none;display:flex;align-items:center;gap:10px;color:#fff}
+    .m-band a svg{width:28px;height:16px;flex:none}
   }
 </style>
 </head>
 <body>
+
+<!-- ==================== MOBILE HEADER ==================== -->
+<div class="m-only m-header">
+  <a class="mh-brand" href="/">
+    <img src="/assets/ovelhanegra-sheep.png" alt="Ovelha Negra">
+    <b>Ovelha Negra</b>
+  </a>
+  <button class="m-burger" id="mBurger" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
+</div>
+<nav class="m-only m-menu" id="mMenu">
+  <a href="#services">Services</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#work">Portfolio</a>
+  <a href="/clients/">Client Login</a>
+  <a href="#contact">Contact</a>
+</nav>
 
 <!-- ==================== POSTER HERO ==================== -->
 <div class="poster">
@@ -294,11 +372,26 @@
       <div class="cell"><div class="kicker">Canadian Digital Agency<br>Driven by Strategy.<br>Designed to Grow.</div></div>
     </div>
 
+    <div class="m-only m-meta">
+      <svg class="maple2" viewBox="0 0 24 24" fill="#d52b1e" aria-hidden="true"><path d="M12 1.5l-1.6 3.1c-.2.4-.5.4-.9.2l-1.2-.6.9 4.6c.2.9-.4 1-.9.5L6.4 7.2l-.3 1.1c-.1.3-.3.6-.7.5L2.8 8.3l.7 2.5c.1.5.3.9-.2 1.1l-.9.5 4.4 3.6c.4.3.6.9.4 1.5l-.4 1.3 4.2-.8c.5-.1.9.1.9.6L11.7 23h.6l-.2-4.4c0-.5.4-.7.9-.6l4.2.8-.4-1.3c-.2-.6 0-1.2.4-1.5l4.4-3.6-.9-.5c-.5-.2-.3-.6-.2-1.1l.7-2.5-2.6.5c-.4.1-.6-.2-.7-.5l-.3-1.1-1.9 2.1c-.5.5-1.1.4-.9-.5l.9-4.6-1.2.6c-.4.2-.7.2-.9-.2z"/></svg>
+      <span>Made in Canada</span>
+      <span class="div" aria-hidden="true"></span>
+      <span>Built to Grow</span>
+    </div>
+    <div class="m-only m-sheep" aria-hidden="true">
+      <div class="halftone"></div>
+      <img src="/assets/ovelhanegra-sheep.png" alt="">
+    </div>
+
     <h1>Ovelha<br>Negra</h1>
 
     <div class="tagline"><span class="t-seo">SEO.</span> <span class="t-design">Design.</span> <span class="t-mkt">Marketing.</span></div>
 
+    <div class="m-only"><span class="m-ddr">Data. Design. Results.</span></div>
+
     <p class="thesis">We combine strategy, creativity, and technology to build brands that stand out and scale up.</p>
+
+    <a class="m-only m-cta" href="mailto:hello.ovelhanegra@gmail.com?subject=Strategy%20call">Book a Strategy Call <svg viewBox="0 0 26 16" fill="none" stroke="#fff" stroke-width="2.4" aria-hidden="true"><path d="M0 8h22M16 1l7 7-7 7"/></svg></a>
 
     <div class="pillars">
       <div class="pillar">
@@ -423,6 +516,54 @@
       </div>
     </div>
 
+  </div>
+</div>
+
+<!-- ==================== MOBILE SECTIONS ==================== -->
+<div class="m-only m-sec">
+  <div class="m-label">What we do</div>
+  <div class="m-rows">
+    <a class="m-row" href="#services">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg></span>
+      <span class="tx"><b>SEO that ranks<br>and converts</b><span>Technical SEO, Content, Link Building, Local SEO</span></span>
+      <svg class="arw" viewBox="0 0 26 16" fill="none" stroke="#0e0e0e" stroke-width="2.2" aria-hidden="true"><path d="M0 8h22M16 1l7 7-7 7"/></svg>
+    </a>
+    <a class="m-row" href="#services">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><path d="M12 3l6 9-6 9-6-9z"/><circle cx="12" cy="12" r="2.4"/></svg></span>
+      <span class="tx"><b>Design that<br>builds brands</b><span>Brand Identity, Web Design, UI/UX, Creative Systems</span></span>
+      <svg class="arw" viewBox="0 0 26 16" fill="none" stroke="#0e0e0e" stroke-width="2.2" aria-hidden="true"><path d="M0 8h22M16 1l7 7-7 7"/></svg>
+    </a>
+    <a class="m-row" href="#services">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><path d="M3 10v4l5 1 3 6h2l-2-6h1l8 4V5l-8 4H8z" fill="#fff" stroke="none"/></svg></span>
+      <span class="tx"><b>Marketing that<br>drives growth</b><span>Paid Ads, Content Marketing, Analytics, CRO</span></span>
+      <svg class="arw" viewBox="0 0 26 16" fill="none" stroke="#0e0e0e" stroke-width="2.2" aria-hidden="true"><path d="M0 8h22M16 1l7 7-7 7"/></svg>
+    </a>
+  </div>
+</div>
+
+<div class="m-only m-sec">
+  <div class="m-label">Performance that speaks</div>
+  <div class="m-stats">
+    <div class="m-stat">
+      <b>127%</b><span>Traffic Growth</span>
+      <svg viewBox="0 0 100 34" fill="none" aria-hidden="true"><path d="M2 30L16 24 30 27 44 18 58 21 72 12 86 15 98 4" stroke="#1b44e4" stroke-width="2.5"/><circle cx="2" cy="30" r="2.4" fill="#1b44e4"/><circle cx="30" cy="27" r="2.4" fill="#1b44e4"/><circle cx="58" cy="21" r="2.4" fill="#1b44e4"/><circle cx="86" cy="15" r="2.4" fill="#1b44e4"/><circle cx="98" cy="4" r="2.4" fill="#1b44e4"/></svg>
+    </div>
+    <div class="m-stat">
+      <b>212</b><span>Keywords Ranked Top 10</span>
+      <svg viewBox="0 0 100 34" aria-hidden="true"><rect x="4" y="26" width="10" height="8" fill="#f05b4a"/><rect x="20" y="22" width="10" height="12" fill="#f05b4a"/><rect x="36" y="18" width="10" height="16" fill="#f05b4a"/><rect x="52" y="14" width="10" height="20" fill="#f05b4a"/><rect x="68" y="8" width="10" height="26" fill="#f05b4a"/><rect x="84" y="2" width="10" height="32" fill="#f05b4a"/></svg>
+    </div>
+    <div class="m-stat">
+      <b>3.6x</b><span>More Conversions</span>
+      <svg viewBox="0 0 100 34" fill="none" aria-hidden="true"><path d="M2 28L16 22 30 26 44 16 58 20 72 10 86 13 98 5" stroke="#f2a912" stroke-width="2.5"/><circle cx="16" cy="22" r="2.4" fill="#f2a912"/><circle cx="44" cy="16" r="2.4" fill="#f2a912"/><circle cx="72" cy="10" r="2.4" fill="#f2a912"/><circle cx="98" cy="5" r="2.4" fill="#f2a912"/></svg>
+    </div>
+  </div>
+</div>
+
+<div class="m-only m-band">
+  <svg class="big-arw" viewBox="0 0 44 44" fill="none" aria-hidden="true"><path d="M8 36L36 8M14 8h22v22" stroke="#fff" stroke-width="4"/></svg>
+  <div>
+    <small>Let's build what's next.</small>
+    <a href="mailto:hello.ovelhanegra@gmail.com?subject=Strategy%20call">Book a Strategy Call <svg viewBox="0 0 26 16" fill="none" stroke="#fff" stroke-width="2.4" aria-hidden="true"><path d="M0 8h22M16 1l7 7-7 7"/></svg></a>
   </div>
 </div>
 
@@ -590,6 +731,17 @@
     <a href="mailto:hello.ovelhanegra@gmail.com">hello.ovelhanegra@gmail.com</a>
   </div>
 </footer>
+
+<script>
+  const mBurger = document.getElementById('mBurger'), mMenu = document.getElementById('mMenu');
+  if (mBurger) {
+    mBurger.addEventListener('click', () => {
+      const open = mMenu.classList.toggle('open');
+      mBurger.setAttribute('aria-expanded', open);
+    });
+    mMenu.addEventListener('click', e => { if (e.target.tagName === 'A') mMenu.classList.remove('open'); });
+  }
+</script>
 
 </body>
 </html>
