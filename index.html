@@ -106,7 +106,9 @@
   .strip-claim{font-weight:800;font-size:12px;letter-spacing:.05em;text-transform:uppercase;line-height:1.5}
 
   /* ---- middle column ---- */
-  .sheep-stage{position:relative;width:100%;max-width:400px;aspect-ratio:1/1.12;margin:52px auto 0;display:flex;align-items:center;justify-content:center}
+  .clients-btn{font-family:var(--black);font-size:13px;letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:#fff;padding:13px 30px;align-self:center;display:inline-block;transition:background .15s}
+  .clients-btn:hover{background:var(--blue)}
+  .sheep-stage{position:relative;width:100%;max-width:400px;aspect-ratio:1/1.12;margin:26px auto 0;display:flex;align-items:center;justify-content:center}
   .halftone{position:absolute;inset:0;background-image:radial-gradient(circle,#a8a8a5 1.6px,transparent 1.7px);background-size:8px 8px;-webkit-mask-image:radial-gradient(ellipse 40% 26% at 50% 30%,#000 60%,transparent 80%),radial-gradient(ellipse 30% 20% at 22% 44%,#000 55%,transparent 78%),radial-gradient(ellipse 30% 20% at 78% 44%,#000 55%,transparent 78%),radial-gradient(ellipse 42% 26% at 50% 52%,#000 58%,transparent 80%),radial-gradient(ellipse 28% 20% at 50% 72%,#000 50%,transparent 76%),radial-gradient(ellipse 15% 12% at 50% 90%,#000 45%,transparent 75%);mask-image:radial-gradient(ellipse 40% 26% at 50% 30%,#000 60%,transparent 80%),radial-gradient(ellipse 30% 20% at 22% 44%,#000 55%,transparent 78%),radial-gradient(ellipse 30% 20% at 78% 44%,#000 55%,transparent 78%),radial-gradient(ellipse 42% 26% at 50% 52%,#000 58%,transparent 80%),radial-gradient(ellipse 28% 20% at 50% 72%,#000 50%,transparent 76%),radial-gradient(ellipse 15% 12% at 50% 90%,#000 45%,transparent 75%)}
   .sheep-stage img{position:relative;width:42%;height:auto;z-index:2;margin-bottom:14%}
 
@@ -322,6 +324,7 @@
 
   <!-- MIDDLE -->
   <div class="col-mid">
+    <a class="clients-btn" href="/clients/">Clients</a>
     <div class="sheep-stage">
       <div class="halftone" aria-hidden="true"></div>
       <img src="/assets/ovelhanegra-sheep.png" alt="Ovelha Negra — the black sheep" width="340" height="340">
