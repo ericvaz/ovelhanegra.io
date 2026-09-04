@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Sementilli Dental × Ovelha Negra — Proposal</title>
+<link rel="icon" type="image/png" href="/assets/ovelhanegra-sheep.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Archivo+Black&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ffffff; --ink:#0e0e0e; --blue:#1b44e4; --coral:#f05b4a; --yellow:#f2a912;
+    --line:#d8d8d4; --grey-txt:#7a7a7a;
+    --sd-green:#1c3a2c; --sd-cream:#f2efe7; --sd-gold:#d9a441;
+    --sans:"Archivo",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    --black:"Archivo Black","Archivo",sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+
+  .top{display:flex;align-items:center;justify-content:space-between;padding:18px 30px;border-bottom:1.5px solid var(--ink);position:sticky;top:0;background:var(--paper);z-index:50}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand img{height:28px}
+  .brand b{font-family:var(--black);font-size:13px;text-transform:uppercase}
+  .top .tag{font-weight:800;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--grey-txt)}
+
+  .wrap{max-width:1100px;margin:0 auto;padding:0 30px}
+  .hero{padding:64px 0 40px;border-bottom:1.5px solid var(--ink)}
+  .hero .pre{font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:16px}
+  h1{font-family:var(--black);font-size:clamp(34px,6vw,70px);line-height:.94;text-transform:uppercase;letter-spacing:-.01em}
+  h1 .x{color:var(--sd-gold)}
+  .hero p{font-weight:600;font-size:17px;max-width:660px;margin-top:22px;color:#333}
+  .hero p b{color:var(--ink)}
+
+  .sec{padding:56px 0;border-bottom:1.5px solid var(--ink)}
+  .sec-label{font-weight:800;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-txt);margin-bottom:12px}
+  h2{font-family:var(--black);font-size:clamp(26px,3.6vw,44px);line-height:.95;text-transform:uppercase;margin-bottom:26px}
+  .lead{font-weight:600;font-size:16px;max-width:700px;color:#333;margin-bottom:30px;line-height:1.6}
+
+  .wake{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;max-width:860px}
+  .wk{border:1.5px solid var(--ink);padding:18px;display:flex;gap:12px;align-items:flex-start}
+  .wk .x{width:26px;height:26px;flex:none;background:var(--coral);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
+  .wk b{display:block;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.03em;margin-bottom:4px}
+  .wk span{font-weight:600;font-size:12.5px;color:#555;line-height:1.45}
+
+  .swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:6px;margin-bottom:14px}
+  .sw{border:1.5px solid var(--ink);min-height:140px;display:flex;flex-direction:column}
+  .sw .chip{flex:1;min-height:88px}
+  .sw .nm{padding:10px 12px;border-top:1.5px solid var(--ink);font-weight:800;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
+  .sw .nm span{display:block;color:var(--grey-txt);font-weight:600;text-transform:none;letter-spacing:0;font-size:11px}
+
+  .built{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+  .bi{border:1.5px solid var(--ink);padding:18px;display:flex;gap:12px;align-items:flex-start}
+  .bi .ck{width:26px;height:26px;flex:none;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
+  .bi b{display:block;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.03em;margin-bottom:4px}
+  .bi span{font-weight:600;font-size:12.5px;color:#555;line-height:1.45}
+  .built-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:6px}
+  .bs{background:var(--sd-green);color:var(--sd-cream);padding:20px;text-align:center}
+  .bs b{font-family:var(--black);font-size:30px;display:block;color:var(--sd-gold)}
+  .bs span{font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+
+  .frames{display:grid;grid-template-columns:68fr 32fr;gap:20px;align-items:start}
+  .frame-desktop{border:2px solid var(--ink)}
+  .frame-bar{display:flex;gap:6px;padding:10px 12px;border-bottom:2px solid var(--ink)}
+  .frame-bar i{width:8px;height:8px;border-radius:50%;background:var(--ink);display:block}
+  .frame-desktop iframe{width:100%;height:460px;border:0;display:block}
+  .frame-phone{border:2px solid var(--ink);border-radius:26px;overflow:hidden;max-width:270px;margin:0 auto}
+  .frame-phone .notch{height:20px;border-bottom:2px solid var(--ink);display:flex;align-items:center;justify-content:center}
+  .frame-phone .notch i{width:60px;height:6px;border-radius:4px;background:var(--ink)}
+  .frame-phone iframe{width:270px;height:520px;border:0;display:block}
+  .visit{display:inline-flex;align-items:center;gap:10px;margin-top:22px;background:var(--sd-green);color:#fff;font-family:var(--black);font-size:14px;text-transform:uppercase;padding:15px 24px}
+  .visit:hover{background:var(--ink)}
+
+  .invoice{border:1.5px solid var(--ink);max-width:720px}
+  .inv-row{display:flex;justify-content:space-between;gap:16px;padding:15px 20px;border-bottom:1px solid var(--line);font-weight:600;font-size:14px}
+  .inv-row span:last-child{font-weight:800;white-space:nowrap}
+  .inv-row small{display:block;color:var(--grey-txt);font-size:12px;font-weight:600}
+  .inv-sub{background:#f6f6f4}
+  .inv-disc{background:var(--yellow);font-weight:800}
+  .inv-total{background:var(--ink);color:#fff;border-bottom:0}
+  .inv-total span{font-family:var(--black);font-size:18px}
+  .inv-note{font-weight:600;font-size:12.5px;color:var(--grey-txt);margin-top:14px;max-width:720px;line-height:1.6}
+
+  .roadmap{border:1.5px solid var(--ink);padding:26px;overflow-x:auto;margin-bottom:34px}
+  .roadmap svg{min-width:1000px;width:100%;height:auto;display:block}
+  .next-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+  .nx{border:1.5px solid var(--ink);padding:20px;display:flex;flex-direction:column;transition:background .15s,color .15s}
+  .nx:hover{background:var(--ink);color:#fff}
+  .nx:hover .np{color:var(--yellow)}
+  .nx:hover span{color:#cfcfcf}
+  .nx .num{font-family:var(--black);font-size:13px;color:var(--sd-gold);margin-bottom:8px}
+  .nx b{font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:.03em;margin-bottom:6px;line-height:1.3}
+  .nx span{font-weight:600;font-size:12.5px;color:#555;line-height:1.5;margin-bottom:14px}
+  .nx .np{margin-top:auto;font-family:var(--black);font-size:15px}
+
+  .cta{background:var(--ink);color:#fff}
+  .cta .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;padding-top:56px;padding-bottom:56px}
+  .cta h2{margin-bottom:8px}
+  .cta h2 .hl{color:var(--sd-gold)}
+  .cta p{font-weight:600;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:#9a9a9a}
+  .cta a{background:var(--blue);color:#fff;font-family:var(--black);font-size:16px;text-transform:uppercase;padding:20px 28px}
+  .cta a:hover{background:var(--sd-green)}
+
+  footer{padding:20px 30px;font-weight:600;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--grey-txt);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  @media(max-width:900px){
+    .built{grid-template-columns:repeat(2,1fr)}
+    .frames{grid-template-columns:1fr}
+    .next-grid{grid-template-columns:repeat(2,1fr)}
+    .built-stats{grid-template-columns:repeat(2,1fr)}
+    .wake{grid-template-columns:1fr}
+  }
+  @media(max-width:600px){
+    .wrap{padding:0 20px}
+    .built,.next-grid{grid-template-columns:1fr}
+    .frame-desktop iframe{height:340px}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <a class="brand" href="/"><img src="/assets/ovelhanegra-sheep.png" alt="Ovelha Negra"><b>Ovelha Negra</b></a>
+  <span class="tag">Client Folio · Proposal · Confidential</span>
+</div>
+
+<div class="wrap hero">
+  <div class="pre">Prepared for Dr. Massimo Sementilli · September 2026</div>
+  <h1>Sementilli Dental <span class="x">×</span><br>Ovelha Negra</h1>
+  <p><b>Did you know most websites went mobile five years ago?</b> We noticed yours isn't optimized — so instead of sending a sales email, we went ahead and rebuilt it. Your new website is designed, built, and running right now. This page shows you what it looks like, what it includes, and what it costs.</p>
+</div>
+
+<div class="wrap sec">
+  <div class="sec-label">01 — The Wake-Up Call</div>
+  <h2>Your current site is<br>costing you patients.</h2>
+  <p class="lead">New patients don't find a dentist in the phone book anymore — they search on their phones and judge in three seconds. Here's what they meet today at sementillidental.ca:</p>
+  <div class="wake">
+    <div class="wk"><span class="x">✕</span><div><b>Not mobile-optimized</b><span>The layout breaks down exactly where patients are looking — on their phones.</span></div></div>
+    <div class="wk"><span class="x">✕</span><div><b>Borrowed template parts</b><span>The page currently loads its icons from another dental clinic's website (markdaledental.ca).</span></div></div>
+    <div class="wk"><span class="x">✕</span><div><b>No reviews, no trust signals</b><span>Your happiest patients are invisible — nothing on the site says "people love this office."</span></div></div>
+    <div class="wk"><span class="x">✕</span><div><b>No clear path to book</b><span>A generic contact form instead of a booking button in every section.</span></div></div>
+  </div>
+</div>
+
+<div class="wrap sec">
+  <div class="sec-label">02 — The Concept</div>
+  <h2>Calm. Trusted.<br>Booking-first.</h2>
+  <p class="lead">"Confident Smiles for a Brighter You." A warm cream-and-deep-green palette, elegant serif headlines, and comfort-focused messaging — the feeling of a modern family practice, not a template. Every section ends in one action: <b>book an appointment</b>. Your real information — Howard Ave suite, hours, phone, services, English &amp; Italian — is already imported.</p>
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:#1c3a2c"></div><div class="nm">Forest Green<span>#1C3A2C · trust &amp; calm</span></div></div>
+    <div class="sw"><div class="chip" style="background:#f2efe7"></div><div class="nm">Warm Cream<span>#F2EFE7 · clean &amp; soft</span></div></div>
+    <div class="sw"><div class="chip" style="background:#e7e4d8"></div><div class="nm">Sage<span>#E7E4D8 · natural ease</span></div></div>
+    <div class="sw"><div class="chip" style="background:#d9a441"></div><div class="nm">Gold<span>#D9A441 · five-star accents</span></div></div>
+  </div>
+</div>
+
+<div class="wrap sec">
+  <div class="sec-label">03 — What The Remake Includes</div>
+  <h2>Already built.<br>Ready to launch.</h2>
+  <div class="built">
+    <div class="bi"><span class="ck">✓</span><div><b>Custom design</b><span>Designed for Sementilli Dental — not a template shared with other clinics.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Mobile-first build</b><span>Flawless on phones, tablets and desktops — where your patients actually are.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Your real info, imported</b><span>122–2462 Howard Ave, hours, phone, email, services — all verified and in place.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Four service lines</b><span>Preventive, restorative, cosmetic and family dentistry, each with its own card.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Meet Dr. Sementilli</b><span>A dedicated section that builds the personal trust patients choose a dentist for.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Google reviews section</b><span>Your real five-star reviews, front and centre (connected at launch).</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Booking-first layout</b><span>Book buttons in the header, hero, and closing band — plus tap-to-call everywhere.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Bilingual-ready</b><span>English &amp; Italian service highlighted — a real differentiator in Windsor.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>SEO foundations</b><span>Proper titles, descriptions and local-business schema so Google understands who and where you are.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Fast, secure hosting</b><span>Modern global hosting with HTTPS — the preview is live on it right now.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Analytics</b><span>See how many people visit, from where, and what they do.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Launch on your domain</b><span>Goes live at sementillidental.ca the day you say go.</span></div></div>
+  </div>
+  <div class="built-stats">
+    <div class="bs"><b>100%</b><span>Mobile-ready</span></div>
+    <div class="bs"><b>4</b><span>Service lines</span></div>
+    <div class="bs"><b>2</b><span>Languages</span></div>
+    <div class="bs"><b>0</b><span>Borrowed icons</span></div>
+  </div>
+</div>
+
+<div class="wrap sec">
+  <div class="sec-label">04 — See It Live</div>
+  <h2>Your new site,<br>running right now.</h2>
+  <div class="frames">
+    <div class="frame-desktop">
+      <div class="frame-bar"><i></i><i></i><i></i></div>
+      <iframe src="https://sementilli.vercel.app" title="Sementilli Dental — desktop preview" loading="lazy"></iframe>
+    </div>
+    <div class="frame-phone">
+      <div class="notch"><i></i></div>
+      <iframe src="https://sementilli.vercel.app" title="Sementilli Dental — mobile preview" loading="lazy"></iframe>
+    </div>
+  </div>
+  <a class="visit" href="https://sementilli.vercel.app" target="_blank" rel="noopener">Open the full preview ↗</a>
+  <p class="inv-note">The photos are elegant placeholders for now — a professional shoot of you, your team and the office is step 2 of the plan below, and it makes all the difference.</p>
+</div>
+
+<div class="wrap sec">
+  <div class="sec-label">05 — The Offer</div>
+  <h2>Total remake.<br>One simple number.</h2>
+  <div class="invoice">
+    <div class="inv-row"><span>Complete redesign &amp; build<small>Custom design, all sections, mobile-first, launch-ready</small></span><span>$2,450</span></div>
+    <div class="inv-row"><span>Content migration &amp; copywriting<small>Services, hours, contact, about — imported, rewritten, verified</small></span><span>$400</span></div>
+    <div class="inv-row"><span>SEO foundations &amp; local schema<small>So "dentist Windsor" searches can find you</small></span><span>$350</span></div>
+    <div class="inv-row inv-sub"><span>Subtotal</span><span>$3,200</span></div>
+    <div class="inv-row inv-disc"><span>New-client offer — 25%<small style="color:#6b5200">Because the work is already done</small></span><span>−$800</span></div>
+    <div class="inv-row inv-total"><span>Total</span><span>$2,400 CAD</span></div>
+  </div>
+  <p class="inv-note">One-time investment — the website itself has no monthly fee from us. Questions about anything on this page? Reply to our email or call — we'll walk through it together.</p>
+</div>
+
+<div class="wrap sec">
+  <div class="sec-label">06 — Where We Go Next</div>
+  <h2>The growth roadmap.</h2>
+  <p class="lead">The site is the foundation. For a dental practice, two things fill the chair: <b>Google reviews</b> and <b>being visible where patients scroll</b>. Every step below is optional and priced separately.</p>
+
+  <div class="roadmap">
+    <svg viewBox="0 0 1030 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Growth roadmap for Sementilli Dental">
+      <line x1="10" y1="95" x2="1015" y2="95" stroke="#0e0e0e" stroke-width="2"/>
+      <g font-family="Archivo, sans-serif">
+        <rect x="10" y="60" width="110" height="70" fill="#1c3a2c"/>
+        <text x="65" y="88" fill="#d9a441" font-size="13" font-weight="800" text-anchor="middle">YOU ARE</text>
+        <text x="65" y="106" fill="#f2efe7" font-size="13" font-weight="800" text-anchor="middle">HERE</text>
+
+        <rect x="145" y="25" width="115" height="60" fill="#1b44e4"/>
+        <text x="202" y="50" fill="#fff" font-size="12" font-weight="800" text-anchor="middle">1 · LAUNCH</text>
+        <text x="202" y="68" fill="#c7d1ff" font-size="10.5" font-weight="600" text-anchor="middle">your domain + email</text>
+
+        <rect x="270" y="105" width="115" height="60" fill="#f05b4a"/>
+        <text x="327" y="130" fill="#fff" font-size="12" font-weight="800" text-anchor="middle">2 · PHOTOS</text>
+        <text x="327" y="148" fill="#ffe0db" font-size="10.5" font-weight="600" text-anchor="middle">you, your team, office</text>
+
+        <rect x="395" y="25" width="115" height="60" fill="#f2a912"/>
+        <text x="452" y="50" fill="#0e0e0e" font-size="12" font-weight="800" text-anchor="middle">3 · REVIEWS</text>
+        <text x="452" y="68" fill="#5c4200" font-size="10.5" font-weight="600" text-anchor="middle">Google + review engine</text>
+
+        <rect x="520" y="105" width="115" height="60" fill="#1b44e4"/>
+        <text x="577" y="130" fill="#fff" font-size="12" font-weight="800" text-anchor="middle">4 · SOCIAL</text>
+        <text x="577" y="148" fill="#c7d1ff" font-size="10.5" font-weight="600" text-anchor="middle">Instagram + content</text>
+
+        <rect x="645" y="25" width="115" height="60" fill="#f05b4a"/>
+        <text x="702" y="50" fill="#fff" font-size="12" font-weight="800" text-anchor="middle">5 · BOOKING</text>
+        <text x="702" y="68" fill="#ffe0db" font-size="10.5" font-weight="600" text-anchor="middle">real online scheduling</text>
+
+        <rect x="770" y="105" width="115" height="60" fill="#f2a912"/>
+        <text x="827" y="130" fill="#0e0e0e" font-size="12" font-weight="800" text-anchor="middle">6 · LOCAL SEO</text>
+        <text x="827" y="148" fill="#5c4200" font-size="10.5" font-weight="600" text-anchor="middle">"dentist Windsor"</text>
+
+        <rect x="910" y="60" width="105" height="70" fill="#1c3a2c"/>
+        <text x="962" y="88" fill="#d9a441" font-size="12" font-weight="800" text-anchor="middle">7 · GROW</text>
+        <text x="962" y="106" fill="#f2efe7" font-size="10.5" font-weight="600" text-anchor="middle">every month</text>
+
+        <circle cx="202" cy="95" r="5" fill="#1b44e4"/>
+        <circle cx="327" cy="95" r="5" fill="#f05b4a"/>
+        <circle cx="452" cy="95" r="5" fill="#f2a912"/>
+        <circle cx="577" cy="95" r="5" fill="#1b44e4"/>
+        <circle cx="702" cy="95" r="5" fill="#f05b4a"/>
+        <circle cx="827" cy="95" r="5" fill="#f2a912"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="next-grid">
+    <div class="nx"><div class="num">01</div><b>Launch on your domain</b><span>sementillidental.ca points at the new site, plus professional email — smile@sementillidental.ca instead of a Gmail.</span><div class="np">$250</div></div>
+    <div class="nx"><div class="num">02</div><b>Professional photography</b><span>You, your team and the office — real faces are what patients trust, and they feed everything below.</span><div class="np">from $900</div></div>
+    <div class="nx" style="border-width:3px"><div class="num">03 · THE CHAIR-FILLER</div><b>Google reviews engine</b><span>An optimized Google Business Profile plus a simple system that turns happy patients into public five-star reviews. For dentists, this is the single highest-return investment there is.</span><div class="np">$450</div></div>
+    <div class="nx"><div class="num">04</div><b>Instagram &amp; content</b><span>Smile transformations, team moments, oral-health tips — steady local content that keeps you in Windsor's feed.</span><div class="np">from $750/mo</div></div>
+    <div class="nx"><div class="num">05</div><b>Real online booking</b><span>Patients pick a slot on their phone at 11pm — integrated scheduling instead of phone tag.</span><div class="np">from $1,200</div></div>
+    <div class="nx"><div class="num">06</div><b>Local SEO</b><span>Own the "dentist Windsor" and "family dentist near me" searches with dedicated, optimized pages.</span><div class="np">$750</div></div>
+    <div class="nx"><div class="num">07</div><b>Grow retainer</b><span>Monthly SEO, ads, content and a plain-English report. Cancel any month.</span><div class="np">$950/mo</div></div>
+  </div>
+</div>
+
+<div class="cta">
+  <div class="wrap">
+    <div>
+      <h2>Ready for a site that<br><span class="hl">fills the chair?</span></h2>
+      <p>Reply to our email or call — no pressure, no jargon.</p>
+    </div>
+    <a href="mailto:hello.ovelhanegra@gmail.com?subject=Sementilli%20Dental%20website">hello.ovelhanegra@gmail.com</a>
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 Ovelha Negra · Prepared exclusively for Sementilli Dental</span>
+  <a href="/clients/">← Client portal</a>
+</footer>
+
+</body>
+</html>
