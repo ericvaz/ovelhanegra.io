@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Kabobgy × Ovelha Negra — Project Folio</title>
+<link rel="icon" type="image/png" href="/assets/ovelhanegra-sheep.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Archivo+Black&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ffffff; --ink:#0e0e0e; --blue:#1b44e4; --coral:#f05b4a; --yellow:#f2a912;
+    --line:#d8d8d4; --grey-txt:#7a7a7a;
+    --kb-orange:#e8811f; --kb-dark:#17130f; --kb-cream:#f4efe6;
+    --sans:"Archivo",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    --black:"Archivo Black","Archivo",sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+
+  .top{display:flex;align-items:center;justify-content:space-between;padding:18px 30px;border-bottom:1.5px solid var(--ink);position:sticky;top:0;background:var(--paper);z-index:50}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand img{height:28px}
+  .brand b{font-family:var(--black);font-size:13px;text-transform:uppercase}
+  .top .tag{font-weight:800;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--grey-txt)}
+
+  .wrap{max-width:1100px;margin:0 auto;padding:0 30px}
+  .hero{padding:64px 0 40px;border-bottom:1.5px solid var(--ink)}
+  .hero .pre{font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:16px}
+  h1{font-family:var(--black);font-size:clamp(38px,6.5vw,76px);line-height:.92;text-transform:uppercase;letter-spacing:-.01em}
+  h1 .x{color:var(--kb-orange)}
+  .hero p{font-weight:600;font-size:17px;max-width:640px;margin-top:22px;color:#333}
+
+  .sec{padding:56px 0;border-bottom:1.5px solid var(--ink)}
+  .sec-label{font-weight:800;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-txt);margin-bottom:12px}
+  h2{font-family:var(--black);font-size:clamp(26px,3.6vw,44px);line-height:.95;text-transform:uppercase;margin-bottom:26px}
+  .lead{font-weight:600;font-size:16px;max-width:680px;color:#333;margin-bottom:30px;line-height:1.6}
+
+  /* palette */
+  .swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:6px;margin-bottom:30px}
+  .sw{border:1.5px solid var(--ink);min-height:150px;display:flex;flex-direction:column}
+  .sw .chip{flex:1;min-height:96px}
+  .sw .nm{padding:10px 12px;border-top:1.5px solid var(--ink);font-weight:800;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
+  .sw .nm span{display:block;color:var(--grey-txt);font-weight:600;text-transform:none;letter-spacing:0;font-size:11px}
+  .type-row{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  .type-card{border:1.5px solid var(--ink);padding:22px}
+  .type-card .big{font-size:34px;line-height:1.05;margin-bottom:8px}
+  .type-card .lbl{font-weight:800;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey-txt)}
+
+  /* built list */
+  .built{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+  .bi{border:1.5px solid var(--ink);padding:18px;display:flex;gap:12px;align-items:flex-start}
+  .bi .ck{width:26px;height:26px;flex:none;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
+  .bi b{display:block;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.03em;margin-bottom:4px}
+  .bi span{font-weight:600;font-size:12.5px;color:#555;line-height:1.45}
+  .built-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:6px}
+  .bs{background:var(--kb-dark);color:var(--kb-cream);padding:20px;text-align:center}
+  .bs b{font-family:var(--black);font-size:32px;display:block;color:var(--kb-orange)}
+  .bs span{font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+
+  /* live preview */
+  .frames{display:grid;grid-template-columns:68fr 32fr;gap:20px;align-items:start}
+  .frame-desktop{border:2px solid var(--ink)}
+  .frame-bar{display:flex;gap:6px;padding:10px 12px;border-bottom:2px solid var(--ink)}
+  .frame-bar i{width:8px;height:8px;border-radius:50%;background:var(--ink);display:block}
+  .frame-desktop iframe{width:100%;height:460px;border:0;display:block}
+  .frame-phone{border:2px solid var(--ink);border-radius:26px;overflow:hidden;max-width:270px;margin:0 auto}
+  .frame-phone .notch{height:20px;border-bottom:2px solid var(--ink);display:flex;align-items:center;justify-content:center}
+  .frame-phone .notch i{width:60px;height:6px;border-radius:4px;background:var(--ink)}
+  .frame-phone iframe{width:270px;height:520px;border:0;display:block}
+  .visit{display:inline-flex;align-items:center;gap:10px;margin-top:22px;background:var(--kb-orange);color:#fff;font-family:var(--black);font-size:14px;text-transform:uppercase;padding:15px 24px}
+  .visit:hover{background:var(--ink)}
+
+  /* invoice */
+  .invoice{border:1.5px solid var(--ink);max-width:720px}
+  .inv-row{display:flex;justify-content:space-between;gap:16px;padding:15px 20px;border-bottom:1px solid var(--line);font-weight:600;font-size:14px}
+  .inv-row span:last-child{font-weight:800;white-space:nowrap}
+  .inv-row small{display:block;color:var(--grey-txt);font-size:12px;font-weight:600}
+  .inv-sub{background:#f6f6f4}
+  .inv-disc{background:var(--yellow);font-weight:800}
+  .inv-disc span{font-weight:800}
+  .inv-total{background:var(--ink);color:#fff;border-bottom:0}
+  .inv-total span{font-family:var(--black);font-size:18px}
+  .inv-note{font-weight:600;font-size:12.5px;color:var(--grey-txt);margin-top:14px;max-width:720px;line-height:1.6}
+
+  /* roadmap */
+  .roadmap{border:1.5px solid var(--ink);padding:26px;overflow-x:auto;margin-bottom:34px}
+  .roadmap svg{min-width:860px;width:100%;height:auto;display:block}
+  .next-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+  .nx{border:1.5px solid var(--ink);padding:20px;display:flex;flex-direction:column;transition:background .15s,color .15s}
+  .nx:hover{background:var(--ink);color:#fff}
+  .nx:hover .np{color:var(--yellow)}
+  .nx:hover span{color:#cfcfcf}
+  .nx .num{font-family:var(--black);font-size:13px;color:var(--kb-orange);margin-bottom:8px}
+  .nx b{font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:.03em;margin-bottom:6px;line-height:1.3}
+  .nx span{font-weight:600;font-size:12.5px;color:#555;line-height:1.5;margin-bottom:14px}
+  .nx .np{margin-top:auto;font-family:var(--black);font-size:15px}
+
+  .cta{background:var(--ink);color:#fff}
+  .cta .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;padding-top:56px;padding-bottom:56px}
+  .cta h2{margin-bottom:8px}
+  .cta h2 .hl{color:var(--kb-orange)}
+  .cta p{font-weight:600;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:#9a9a9a}
+  .cta a{background:var(--blue);color:#fff;font-family:var(--black);font-size:16px;text-transform:uppercase;padding:20px 28px}
+  .cta a:hover{background:var(--kb-orange)}
+
+  footer{padding:20px 30px;font-weight:600;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--grey-txt);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  @media(max-width:900px){
+    .built{grid-template-columns:repeat(2,1fr)}
+    .frames{grid-template-columns:1fr}
+    .next-grid{grid-template-columns:repeat(2,1fr)}
+    .built-stats{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:600px){
+    .wrap{padding:0 20px}
+    .built,.next-grid,.type-row{grid-template-columns:1fr}
+    .frame-desktop iframe{height:340px}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <a class="brand" href="/"><img src="/assets/ovelhanegra-sheep.png" alt="Ovelha Negra"><b>Ovelha Negra</b></a>
+  <span class="tag">Client Folio · Confidential</span>
+</div>
+
+<div class="wrap hero">
+  <div class="pre">Prepared for Kabobgy · September 2026</div>
+  <h1>Kabobgy <span class="x">×</span><br>Ovelha Negra</h1>
+  <p>Your restaurant's new digital home is designed, built, and live. This folio walks you through the concept, the brand system, everything that has been delivered, your investment, and where we recommend going next.</p>
+</div>
+
+<div class="wrap sec">
+  <div class="sec-label">01 — The Concept</div>
+  <h2>Appetite first.<br>Zero maintenance.</h2>
+  <p class="lead">Real Kabobs. Real Good. The site opens on sizzling food photography over deep charcoal, with flame-orange action buttons that pull hungry visitors straight to <b>Order Online</b>. It is designed mobile-first — most people looking for dinner are on their phones — and every one of your six locations gets its own card with address, phone and hours.</p>
+  <p class="lead">Behind the scenes: a one-page admin panel made for you. Offers, announcements, photos, phone numbers — small forms, one publish button, changes live instantly. <b>You can never break the website.</b></p>
+</div>
+
+<div class="wrap sec">
+  <div class="sec-label">02 — Brand System</div>
+  <h2>Your colours.<br>Your voice.</h2>
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:#e8811f"></div><div class="nm">Flame Orange<span>#E8811F · action &amp; appetite</span></div></div>
+    <div class="sw"><div class="chip" style="background:#17130f"></div><div class="nm">Charcoal<span>#17130F · grill &amp; depth</span></div></div>
+    <div class="sw"><div class="chip" style="background:#f4efe6"></div><div class="nm">Cream<span>#F4EFE6 · warmth &amp; light</span></div></div>
+    <div class="sw"><div class="chip" style="background:#e9e2d8"></div><div class="nm">Warm Text<span>#E9E2D8 · on dark</span></div></div>
+    <div class="sw"><div class="chip" style="background:#241d16"></div><div class="nm">Espresso<span>#241D16 · on light</span></div></div>
+  </div>
+  <div class="type-row">
+    <div class="type-card"><div class="big" style="font-family:var(--black)">KABOBGY</div><div class="lbl">Archivo Black &amp; Bold — headlines, buttons, menu sections</div></div>
+    <div class="type-card"><div class="big" style="font-weight:500">Authentic. Fresh. Delicious.</div><div class="lbl">Inter — body copy, menu items, descriptions</div></div>
+  </div>
+</div>
+
+<div class="wrap sec">
+  <div class="sec-label">03 — What Has Been Built</div>
+  <h2>Everything, end to end.</h2>
+  <div class="built">
+    <div class="bi"><span class="ck">✓</span><div><b>Custom website design</b><span>Home, menu, catering, locations, about &amp; contact — designed from scratch for Kabobgy.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Full takeout menu — 69 items</b><span>Every dish imported from kabobgy.ca, reformatted, priced and organized by section.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>6 location cards</b><span>Barrie, Newmarket, Richmond Hill, Vaughan, Scarborough, Mississauga — addresses, phones, hours.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Order Online buttons</b><span>Prominent ordering calls-to-action in the header, hero and throughout the page.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Offers &amp; specials module</b><span>Post a Family Platter deal in one minute; switch it off when it ends — nothing to delete.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Announcement banner</b><span>"Open Family Day 12–8pm" across the top of the site whenever you need it.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Photo &amp; video gallery</b><span>Upload photos from your phone or paste a YouTube link — it appears on the site.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Custom admin panel</b><span>One page, phone-friendly, plain language. Small forms and one big PUBLISH button.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Database backend</b><span>A real production database (Supabase) storing your menu, offers, locations and photos.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Instant publishing</b><span>Press publish, refresh the site, it's live. No waiting, no developer needed.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Hosting &amp; deployment</b><span>Fast global hosting on Vercel, HTTPS secure, running right now.</span></div></div>
+    <div class="bi"><span class="ck">✓</span><div><b>Owner's guide</b><span>A plain-English, step-by-step guide for every task — written for people, not programmers.</span></div></div>
+  </div>
+  <div class="built-stats">
+    <div class="bs"><b>69</b><span>Menu items live</span></div>
+    <div class="bs"><b>6</b><span>Locations mapped</span></div>
+    <div class="bs"><b>12</b><span>Deliverables shipped</span></div>
+    <div class="bs"><b>0</b><span>Ways to break it</span></div>
+  </div>
+</div>
+
+<div class="wrap sec">
+  <div class="sec-label">04 — See It Live</div>
+  <h2>This is your site,<br>running right now.</h2>
+  <div class="frames">
+    <div class="frame-desktop">
+      <div class="frame-bar"><i></i><i></i><i></i></div>
+      <iframe src="https://kabobgy.vercel.app" title="Kabobgy website — desktop preview" loading="lazy"></iframe>
+    </div>
+    <div class="frame-phone">
+      <div class="notch"><i></i></div>
+      <iframe src="https://kabobgy.vercel.app" title="Kabobgy website — mobile preview" loading="lazy"></iframe>
+    </div>
+  </div>
+  <a class="visit" href="https://kabobgy.vercel.app" target="_blank" rel="noopener">Open the full site ↗</a>
+</div>
+
+<div class="wrap sec">
+  <div class="sec-label">05 — Your Investment</div>
+  <h2>The numbers.</h2>
+  <div class="invoice">
+    <div class="inv-row"><span>Custom website design &amp; build<small>Design, all sections, mobile-first, launch-ready</small></span><span>$1,950</span></div>
+    <div class="inv-row"><span>Custom admin panel + database<small>One-page CMS, Supabase backend, instant publishing</small></span><span>$1,200</span></div>
+    <div class="inv-row"><span>Full menu build<small>69 items imported, formatted and priced</small></span><span>$600</span></div>
+    <div class="inv-row"><span>Hosting setup, deployment &amp; owner's guide<small>Vercel hosting, HTTPS, plain-English documentation</small></span><span>$250</span></div>
+    <div class="inv-row inv-sub"><span>Subtotal</span><span>$4,000</span></div>
+    <div class="inv-row inv-disc"><span>Founding-client discount — 30%<small style="color:#6b5200">Because you trusted us first</small></span><span>−$1,200</span></div>
+    <div class="inv-row inv-total"><span>Total due</span><span>$2,800 CAD</span></div>
+  </div>
+  <p class="inv-note">One-time payment — the website itself has no monthly fee from us. Payable by Interac e-transfer to <b>hello.ovelhanegra@gmail.com</b>. Questions about anything on this page? Just reply to our email or call — we'll walk through it together.</p>
+</div>
+
+<div class="wrap sec">
+  <div class="sec-label">06 — Where We Go Next</div>
+  <h2>The growth roadmap.</h2>
+  <p class="lead">The site is the foundation. Here's the path we recommend to turn it into a machine that fills all six restaurants — each step is optional, priced separately, and builds on the last.</p>
+
+  <div class="roadmap">
+    <svg viewBox="0 0 900 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Growth roadmap: live site to growth retainer">
+      <line x1="10" y1="95" x2="890" y2="95" stroke="#0e0e0e" stroke-width="2"/>
+      <g font-family="Archivo, sans-serif">
+        <rect x="10" y="60" width="110" height="70" fill="#17130f"/>
+        <text x="65" y="88" fill="#e8811f" font-size="13" font-weight="800" text-anchor="middle">YOU ARE</text>
+        <text x="65" y="106" fill="#f4efe6" font-size="13" font-weight="800" text-anchor="middle">HERE</text>
+
+        <rect x="150" y="25" width="120" height="60" fill="#1b44e4"/>
+        <text x="210" y="50" fill="#fff" font-size="12" font-weight="800" text-anchor="middle">1 · DOMAIN</text>
+        <text x="210" y="68" fill="#c7d1ff" font-size="10.5" font-weight="600" text-anchor="middle">kabobgy.ca + email</text>
+
+        <rect x="280" y="105" width="120" height="60" fill="#f05b4a"/>
+        <text x="340" y="130" fill="#fff" font-size="12" font-weight="800" text-anchor="middle">2 · PHOTOS</text>
+        <text x="340" y="148" fill="#ffe0db" font-size="10.5" font-weight="600" text-anchor="middle">real dishes, shot fresh</text>
+
+        <rect x="410" y="25" width="120" height="60" fill="#f2a912"/>
+        <text x="470" y="50" fill="#0e0e0e" font-size="12" font-weight="800" text-anchor="middle">3 · GOOGLE ×6</text>
+        <text x="470" y="68" fill="#5c4200" font-size="10.5" font-weight="600" text-anchor="middle">profiles + reviews</text>
+
+        <rect x="540" y="105" width="120" height="60" fill="#1b44e4"/>
+        <text x="600" y="130" fill="#fff" font-size="12" font-weight="800" text-anchor="middle">4 · LOCAL SEO</text>
+        <text x="600" y="148" fill="#c7d1ff" font-size="10.5" font-weight="600" text-anchor="middle">a page per city</text>
+
+        <rect x="670" y="25" width="120" height="60" fill="#f05b4a"/>
+        <text x="730" y="50" fill="#fff" font-size="12" font-weight="800" text-anchor="middle">5 · ORDERING</text>
+        <text x="730" y="68" fill="#ffe0db" font-size="10.5" font-weight="600" text-anchor="middle">direct, commission-free</text>
+
+        <rect x="800" y="60" width="90" height="70" fill="#17130f"/>
+        <text x="845" y="88" fill="#e8811f" font-size="12" font-weight="800" text-anchor="middle">6 · GROW</text>
+        <text x="845" y="106" fill="#f4efe6" font-size="10.5" font-weight="600" text-anchor="middle">every month</text>
+
+        <circle cx="210" cy="95" r="5" fill="#1b44e4"/>
+        <circle cx="340" cy="95" r="5" fill="#f05b4a"/>
+        <circle cx="470" cy="95" r="5" fill="#f2a912"/>
+        <circle cx="600" cy="95" r="5" fill="#1b44e4"/>
+        <circle cx="730" cy="95" r="5" fill="#f05b4a"/>
+        <line x1="210" y1="85" x2="210" y2="95" stroke="#1b44e4" stroke-width="2"/>
+        <line x1="340" y1="95" x2="340" y2="105" stroke="#f05b4a" stroke-width="2"/>
+        <line x1="470" y1="85" x2="470" y2="95" stroke="#f2a912" stroke-width="2"/>
+        <line x1="600" y1="95" x2="600" y2="105" stroke="#1b44e4" stroke-width="2"/>
+        <line x1="730" y1="85" x2="730" y2="95" stroke="#f05b4a" stroke-width="2"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="next-grid">
+    <div class="nx"><div class="num">01</div><b>Your own domain &amp; email</b><span>kabobgy.ca (or .com) on the site, plus professional email — orders@kabobgy.ca beats a Gmail on a printed menu.</span><div class="np">$250</div></div>
+    <div class="nx"><div class="num">02</div><b>Real food photography</b><span>Half-day shoot at one location: your actual skewers, platters and dips replacing stock photos. Food sells food.</span><div class="np">from $900</div></div>
+    <div class="nx"><div class="num">03</div><b>Google presence ×6</b><span>A verified Google Business Profile for every location, linked to the site, with a review-collection system.</span><div class="np">$750</div></div>
+    <div class="nx"><div class="num">04</div><b>Local SEO pages</b><span>A dedicated page per city — "Kabob in Barrie" searches land on your Barrie page, not a competitor's.</span><div class="np">$1,200</div></div>
+    <div class="nx"><div class="num">05</div><b>Direct online ordering</b><span>Commission-free ordering on your own site — stop giving apps 20–30% of every order.</span><div class="np">from $1,500</div></div>
+    <div class="nx"><div class="num">06</div><b>Grow retainer</b><span>Monthly SEO, ads, content and a report you can actually read. Cancel any month.</span><div class="np">$950/mo</div></div>
+  </div>
+</div>
+
+<div class="cta">
+  <div class="wrap">
+    <div>
+      <h2>Ready for the<br><span class="hl">next course?</span></h2>
+      <p>Reply to our email or write us anytime.</p>
+    </div>
+    <a href="mailto:hello.ovelhanegra@gmail.com?subject=Kabobgy%20project">hello.ovelhanegra@gmail.com</a>
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 Ovelha Negra · Prepared exclusively for Kabobgy</span>
+  <a href="/clients/">← Client portal</a>
+</footer>
+
+</body>
+</html>
