@@ -100,6 +100,24 @@
   .nx span{font-weight:600;font-size:12.5px;color:#555;line-height:1.5;margin-bottom:14px}
   .nx .np{margin-top:auto;font-family:var(--black);font-size:15px}
 
+  /* playbook */
+  .playbook{display:grid;grid-template-columns:38fr 62fr;gap:0;border:2px solid var(--ink)}
+  .pb-cover{background:#211d19;color:#f4efe6;padding:44px 30px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px}
+  .pb-cover .skewer{color:#c09a55;font-size:22px;letter-spacing:.1em;margin-bottom:10px}
+  .pb-cover .t1{font-family:var(--black);font-size:30px;letter-spacing:.02em}
+  .pb-cover .t2{font-weight:800;font-size:12px;letter-spacing:.32em;color:#c09a55;margin-top:2px}
+  .pb-cover .rule{width:44px;height:2px;background:#b0492f;margin:12px 0}
+  .pb-cover .t3{font-weight:600;font-size:12px;color:#cdc3ae;font-style:italic}
+  .pb-body{padding:28px 30px;display:flex;flex-direction:column}
+  .pb-body p{font-weight:600;font-size:14px;color:#333;line-height:1.6;margin-bottom:16px}
+  .pb-list{list-style:none;margin:0 0 22px;display:grid;grid-template-columns:1fr 1fr;gap:7px 18px}
+  .pb-list li{font-weight:700;font-size:12px;letter-spacing:.04em;text-transform:uppercase;display:flex;gap:8px;align-items:baseline}
+  .pb-list li::before{content:"—";color:var(--kb-orange);font-weight:800}
+  .pb-actions{margin-top:auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .pb-btn{display:inline-flex;align-items:center;gap:10px;background:var(--kb-orange);color:#fff;font-family:var(--black);font-size:14px;text-transform:uppercase;padding:15px 24px}
+  .pb-btn:hover{background:var(--ink)}
+  .pb-meta{font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey-txt)}
+
   .cta{background:var(--ink);color:#fff}
   .cta .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;padding-top:56px;padding-bottom:56px}
   .cta h2{margin-bottom:8px}
@@ -111,6 +129,8 @@
   footer{padding:20px 30px;font-weight:600;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--grey-txt);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
   @media(max-width:900px){
+    .playbook{grid-template-columns:1fr}
+    .pb-list{grid-template-columns:1fr}
     .built{grid-template-columns:repeat(2,1fr)}
     .frames{grid-template-columns:1fr}
     .next-grid{grid-template-columns:repeat(2,1fr)}
@@ -280,6 +300,36 @@
     <div class="nx"><div class="num">05</div><b>Local SEO pages ×3</b><span>A dedicated page per town — "kabob near me" in Tecumseh, Windsor or LaSalle lands on you, not a competitor.</span><div class="np">$750</div></div>
     <div class="nx"><div class="num">06</div><b>Direct online ordering</b><span>Commission-free ordering on your own site — stop giving apps 20–30% of every order.</span><div class="np">from $1,500</div></div>
     <div class="nx"><div class="num">07</div><b>Grow retainer</b><span>Monthly SEO, ads, content and a report you can actually read. Cancel any month.</span><div class="np">$950/mo</div></div>
+  </div>
+</div>
+
+<div class="wrap sec">
+  <div class="sec-label">07 — The Growth Playbook</div>
+  <h2>Your 90-day plan,<br>on paper.</h2>
+  <p class="lead">Everything on the roadmap above, worked out in full: a 34-page strategy document written specifically for Kabobgy — the market numbers for Windsor–Essex, the one-brand recommendation, the content system, creators, catering, menu profitability, and a week-by-week 90-day plan with owners and success measures for every action.</p>
+  <div class="playbook">
+    <div class="pb-cover">
+      <div class="skewer">◆<br>◆<br>◆</div>
+      <div class="t1">KABOBGY</div>
+      <div class="t2">90-DAY GROWTH PLAYBOOK</div>
+      <div class="rule"></div>
+      <div class="t3">Brand. Digital. Community. Growth.</div>
+    </div>
+    <div class="pb-body">
+      <p>Read it with a coffee, not a dictionary — it is written for a restaurant owner, not a marketer. Every recommendation is marked <b>DO NOW</b>, <b>DO NEXT</b>, <b>TEST</b> or <b>LATER</b>, and nothing in it relies on invented numbers.</p>
+      <ul class="pb-list">
+        <li>Windsor–Essex market analysis</li>
+        <li>One brand, three locations</li>
+        <li>Local SEO &amp; Google profiles</li>
+        <li>Content &amp; creator system</li>
+        <li>Menu engineering &amp; catering</li>
+        <li>The 90-day roadmap</li>
+      </ul>
+      <div class="pb-actions">
+        <a class="pb-btn" href="Kabobgy-90-Day-Growth-Playbook.pdf" target="_blank" rel="noopener">Read the playbook ↗</a>
+        <span class="pb-meta">PDF · 34 pages · Confidential</span>
+      </div>
+    </div>
   </div>
 </div>
 
