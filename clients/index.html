@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Client Login — Ovelha Negra</title>
+<link rel="icon" type="image/png" href="/assets/ovelhanegra-sheep.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Archivo+Black&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ffffff;
+    --ink:#0e0e0e;
+    --blue:#1b44e4;
+    --coral:#f05b4a;
+    --yellow:#f2a912;
+    --line:#d8d8d4;
+    --grey-txt:#7a7a7a;
+    --sans:"Archivo",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    --black:"Archivo Black","Archivo",-apple-system,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);min-height:100vh;display:flex;flex-direction:column}
+  a{color:inherit;text-decoration:none}
+
+  .top{display:flex;align-items:center;justify-content:space-between;padding:22px 34px;border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand img{height:30px;width:auto}
+  .brand b{font-family:var(--black);font-size:14px;letter-spacing:.04em;text-transform:uppercase}
+  .top a.back{font-weight:800;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey-txt)}
+  .top a.back:hover{color:var(--ink)}
+
+  main{flex:1;display:grid;place-items:center;padding:40px 22px}
+  .card{width:100%;max-width:420px;border:1.5px solid var(--ink);padding:38px 34px}
+  .card .dots{display:flex;gap:5px;margin-bottom:26px}
+  .card .dots i{width:8px;height:8px;display:block}
+  .card .dots i:nth-child(1){background:var(--blue)}
+  .card .dots i:nth-child(2){background:var(--coral)}
+  .card .dots i:nth-child(3){background:var(--yellow)}
+  h1{font-family:var(--black);font-size:30px;line-height:1;text-transform:uppercase;margin-bottom:8px}
+  .sub{font-weight:600;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--grey-txt);margin-bottom:30px}
+  label{display:block;font-weight:800;font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:7px}
+  input{width:100%;border:1.5px solid var(--ink);padding:13px 14px;font-family:var(--sans);font-weight:600;font-size:15px;margin-bottom:20px;background:var(--paper);color:var(--ink)}
+  input:focus{outline:3px solid var(--blue);outline-offset:-1.5px;border-color:var(--blue)}
+  button{width:100%;border:0;background:var(--ink);color:#fff;font-family:var(--black);font-size:14px;letter-spacing:.04em;text-transform:uppercase;padding:16px;cursor:pointer;transition:background .15s}
+  button:hover{background:var(--blue)}
+  .err{display:none;background:var(--coral);color:#fff;font-weight:800;font-size:12px;letter-spacing:.05em;text-transform:uppercase;padding:12px 14px;margin-bottom:20px}
+  .err.show{display:block}
+  .ok{display:none;background:var(--blue);color:#fff;font-weight:800;font-size:12px;letter-spacing:.05em;text-transform:uppercase;padding:12px 14px;margin-bottom:20px}
+  .ok.show{display:block}
+  .help{margin-top:22px;font-weight:600;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--grey-txt);line-height:1.7}
+  .help a{color:var(--blue);font-weight:800}
+
+  footer{border-top:1px solid var(--line);padding:18px 34px;font-weight:600;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--grey-txt)}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <a class="brand" href="/">
+    <img src="/assets/ovelhanegra-sheep.png" alt="Ovelha Negra">
+    <b>Ovelha Negra</b>
+  </a>
+  <a class="back" href="/">← Back to site</a>
+</div>
+
+<main>
+  <form class="card" id="loginForm" autocomplete="off">
+    <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+    <h1>Client Access</h1>
+    <div class="sub">Preview your project in progress</div>
+    <div class="err" id="err">Wrong username or password</div>
+    <div class="ok" id="ok">Welcome back — opening your site…</div>
+    <label for="u">Username</label>
+    <input id="u" name="username" type="text" required autocapitalize="none" autocorrect="off" spellcheck="false">
+    <label for="p">Password</label>
+    <input id="p" name="password" type="password" required>
+    <button type="submit">View my website →</button>
+    <p class="help">Lost your access details? Email <a href="mailto:hello.ovelhanegra@gmail.com?subject=Client%20access">hello.ovelhanegra@gmail.com</a></p>
+  </form>
+</main>
+
+<footer>© 2026 Ovelha Negra · Client preview portal</footer>
+
+<script>
+  // Client registry: sha256("username:password") -> destination URL.
+  const CLIENTS = {
+    "65d3a16ce8fca465a01596bf59b9298d4414c98520bfbcf2aef234ddc9eb6851": "https://kabobgy.vercel.app"
+  };
+
+  async function sha256(text) {
+    const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, "0")).join("");
+  }
+
+  document.getElementById("loginForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const err = document.getElementById("err"), ok = document.getElementById("ok");
+    err.classList.remove("show"); ok.classList.remove("show");
+    const u = document.getElementById("u").value.trim().toLowerCase();
+    const p = document.getElementById("p").value;
+    const url = CLIENTS[await sha256(u + ":" + p)];
+    if (url) {
+      ok.classList.add("show");
+      setTimeout(() => { window.location.href = url; }, 600);
+    } else {
+      err.classList.add("show");
+    }
+  });
+</script>
+
+</body>
+</html>
